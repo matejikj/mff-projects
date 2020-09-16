@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+	<head>
+		<base href="/localhost" />
+		<meta charset="UTF-8" />
+		<title><?= $title ?></title>
+		<meta name="description" content="<?= $description ?>" />
+		<meta name="keywords" content="<?= $keywords ?>" />
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="scripts/list.js"></script>
+	</head>
+
+	<body>
+		<div id="page-wrapper">
+			<div>
+				<?php $this->controller->showView(); ?>
+			</div>
+		</div>
+	</body>
+</html>

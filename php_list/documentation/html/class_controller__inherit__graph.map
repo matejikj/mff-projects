@@ -1,0 +1,10 @@
+<map id="Controller" name="Controller">
+<area shape="rect" id="node1" title=" " alt="" coords="421,5,521,141"/>
+<area shape="rect" id="node2" href="$class_ajax_controller.html" title=" " alt="" coords="5,189,108,267"/>
+<area shape="rect" id="node3" href="$class_delete_controller.html" title=" " alt="" coords="133,189,247,267"/>
+<area shape="rect" id="node4" href="$class_error_controller.html" title=" " alt="" coords="272,189,377,267"/>
+<area shape="rect" id="node5" href="$class_homepage_controller.html" title=" " alt="" coords="402,189,541,267"/>
+<area shape="rect" id="node6" href="$class_list_controller.html" title=" " alt="" coords="565,189,663,267"/>
+<area shape="rect" id="node7" href="$class_router_controller.html" title=" " alt="" coords="687,189,802,267"/>
+<area shape="rect" id="node8" href="$class_update_controller.html" title=" " alt="" coords="827,189,945,267"/>
+</map>

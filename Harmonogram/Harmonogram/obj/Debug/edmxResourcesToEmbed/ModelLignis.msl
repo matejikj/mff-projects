@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HarmonogramDBModelStoreContainer" CdmEntityContainer="HarmonogramDBEntities">
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="HarmonogramDBModel.Car">
+        <MappingFragment StoreEntitySet="Car">
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="HarmonogramDBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expeditions">
+      <EntityTypeMapping TypeName="HarmonogramDBModel.Expedition">
+        <MappingFragment StoreEntitySet="Expedition">
+          <ScalarProperty Name="ExpeditionId" ColumnName="ExpeditionId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ExpedicePoradi" ColumnName="ExpedicePoradi" />
+          <ScalarProperty Name="ExpediceAuto" ColumnName="ExpediceAuto" />
+          <ScalarProperty Name="ExpediceDatum" ColumnName="ExpediceDatum" />
+          <ScalarProperty Name="DoplnMat" ColumnName="DoplnMat" />
+          <ScalarProperty Name="KridlaKsExpedovanych" ColumnName="KridlaKsExpedovanych" />
+          <ScalarProperty Name="ZarubneKsExpedovanych" ColumnName="ZarubneKsExpedovanych" />
+          <ScalarProperty Name="ExpeditedSortNr" ColumnName="ExpeditedSortNr" />
+          <ScalarProperty Name="KridlaKsZbyvaExpedovat" ColumnName="KridlaKsZbyvaExpedovat" />
+          <ScalarProperty Name="ZarubneKsZbyvaExpedovat" ColumnName="ZarubneKsZbyvaExpedovat" />
+          <ScalarProperty Name="ExepdiceColor" ColumnName="ExepdiceColor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="HarmonogramDBModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="MaterialId" ColumnName="MaterialId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="HarmonogramDBModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="SortNr" ColumnName="SortNr" />
+          <ScalarProperty Name="IsInProccess" ColumnName="IsInProccess" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="ArchivedBy" ColumnName="ArchivedBy" />
+          <ScalarProperty Name="ArchivedDate" ColumnName="ArchivedDate" />
+          <ScalarProperty Name="IsArchived" ColumnName="IsArchived" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="Priprava" ColumnName="Priprava" />
+          <ScalarProperty Name="Oblozky" ColumnName="Oblozky" />
+          <ScalarProperty Name="Stredove" ColumnName="Stredove" />
+          <ScalarProperty Name="Ramecek" ColumnName="Ramecek" />
+          <ScalarProperty Name="Klapacka" ColumnName="Klapacka" />
+          <ScalarProperty Name="Posuv" ColumnName="Posuv" />
+          <ScalarProperty Name="Dvere" ColumnName="Dvere" />
+          <ScalarProperty Name="Dokonceni" ColumnName="Dokonceni" />
+          <ScalarProperty Name="Kompletace" ColumnName="Kompletace" />
+          <ScalarProperty Name="Sklad" ColumnName="Sklad" />
+          <ScalarProperty Name="ZahajeniDatum" ColumnName="ZahajeniDatum" />
+          <ScalarProperty Name="Technik" ColumnName="Technik" />
+          <ScalarProperty Name="Zakazka" ColumnName="Zakazka" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="ZakazkaColor" ColumnName="ZakazkaColor" />
+          <ScalarProperty Name="MaterialColor" ColumnName="MaterialColor" />
+          <ScalarProperty Name="ZakazkaNr" ColumnName="ZakazkaNr" />
+          <ScalarProperty Name="VyrobniNr" ColumnName="VyrobniNr" />
+          <ScalarProperty Name="KridlaText" ColumnName="KridlaText" />
+          <ScalarProperty Name="KridlaKsExpedovanych" ColumnName="KridlaKsExpedovanych" />
+          <ScalarProperty Name="KridlaKs" ColumnName="KridlaKs" />
+          <ScalarProperty Name="ZarubneText" ColumnName="ZarubneText" />
+          <ScalarProperty Name="ZarubneKsExpedovanych" ColumnName="ZarubneKsExpedovanych" />
+          <ScalarProperty Name="ZarubneKs" ColumnName="ZarubneKs" />
+          <ScalarProperty Name="Dokumentace" ColumnName="Dokumentace" />
+          <ScalarProperty Name="InDoca" ColumnName="InDoca" />
+          <ScalarProperty Name="DocUrl" ColumnName="DocUrl" />
+          <ScalarProperty Name="ObalovatOblozky" ColumnName="ObalovatOblozky" />
+          <ScalarProperty Name="RezatOblozky" ColumnName="RezatOblozky" />
+          <ScalarProperty Name="CncOblozky" ColumnName="CncOblozky" />
+          <ScalarProperty Name="CentrumStredove" ColumnName="CentrumStredove" />
+          <ScalarProperty Name="LisStredove" ColumnName="LisStredove" />
+          <ScalarProperty Name="OlepovaniStredove" ColumnName="OlepovaniStredove" />
+          <ScalarProperty Name="FrezovaniStredove" ColumnName="FrezovaniStredove" />
+          <ScalarProperty Name="TypRamecek" ColumnName="TypRamecek" />
+          <ScalarProperty Name="ObalovaniRamecek" ColumnName="ObalovaniRamecek" />
+          <ScalarProperty Name="RezaniRamecek" ColumnName="RezaniRamecek" />
+          <ScalarProperty Name="ObalovaniKlapacka" ColumnName="ObalovaniKlapacka" />
+          <ScalarProperty Name="RezaniKlapacka" ColumnName="RezaniKlapacka" />
+          <ScalarProperty Name="HranolPosuv" ColumnName="HranolPosuv" />
+          <ScalarProperty Name="GarnyzPosuv" ColumnName="GarnyzPosuv" />
+          <ScalarProperty Name="DorazovaPosuv" ColumnName="DorazovaPosuv" />
+          <ScalarProperty Name="CentrumDvere" ColumnName="CentrumDvere" />
+          <ScalarProperty Name="KorpusyDvere" ColumnName="KorpusyDvere" />
+          <ScalarProperty Name="SesazenkyDvere" ColumnName="SesazenkyDvere" />
+          <ScalarProperty Name="LisDvere" ColumnName="LisDvere" />
+          <ScalarProperty Name="FormatkaDvere" ColumnName="FormatkaDvere" />
+          <ScalarProperty Name="OlepovackaDvere" ColumnName="OlepovackaDvere" />
+          <ScalarProperty Name="CncDvere" ColumnName="CncDvere" />
+          <ScalarProperty Name="PgmDvere" ColumnName="PgmDvere" />
+          <ScalarProperty Name="BrouseniDyhaDokonceni" ColumnName="BrouseniDyhaDokonceni" />
+          <ScalarProperty Name="ZakladDokonceni" ColumnName="ZakladDokonceni" />
+          <ScalarProperty Name="BrouseniZakladDokonceni" ColumnName="BrouseniZakladDokonceni" />
+          <ScalarProperty Name="VrchDokonceni" ColumnName="VrchDokonceni" />
+          <ScalarProperty Name="DvereKompletace" ColumnName="DvereKompletace" />
+          <ScalarProperty Name="ZarubenKompletace" ColumnName="ZarubenKompletace" />
+          <ScalarProperty Name="KovaniSklad" ColumnName="KovaniSklad" />
+          <ScalarProperty Name="SkloSklad" ColumnName="SkloSklad" />
+          <ScalarProperty Name="PripravaZar" ColumnName="PripravaZar" />
+          <ScalarProperty Name="DokumentPripravaZar" ColumnName="DokumentPripravaZar" />
+          <ScalarProperty Name="InDocaPripravaZar" ColumnName="InDocaPripravaZar" />
+          <ScalarProperty Name="LaserZar" ColumnName="LaserZar" />
+          <ScalarProperty Name="PohLaserZar" ColumnName="PohLaserZar" />
+          <ScalarProperty Name="NepohLaserZar" ColumnName="NepohLaserZar" />
+          <ScalarProperty Name="PoutecLaserZar" ColumnName="PoutecLaserZar" />
+          <ScalarProperty Name="NuzkyZar" ColumnName="NuzkyZar" />
+          <ScalarProperty Name="SplnenoNuzkyZar" ColumnName="SplnenoNuzkyZar" />
+          <ScalarProperty Name="OhybackaZar" ColumnName="OhybackaZar" />
+          <ScalarProperty Name="PohOhybackaZar" ColumnName="PohOhybackaZar" />
+          <ScalarProperty Name="NepohOhybackaZar" ColumnName="NepohOhybackaZar" />
+          <ScalarProperty Name="PoutecOhybackaZar" ColumnName="PoutecOhybackaZar" />
+          <ScalarProperty Name="PilaZar" ColumnName="PilaZar" />
+          <ScalarProperty Name="PohPilaZar" ColumnName="PohPilaZar" />
+          <ScalarProperty Name="NepohPilaZar" ColumnName="NepohPilaZar" />
+          <ScalarProperty Name="VyrazeckaZar" ColumnName="VyrazeckaZar" />
+          <ScalarProperty Name="SplnenoVyrazeckaZar" ColumnName="SplnenoVyrazeckaZar" />
+          <ScalarProperty Name="BodovaniZar" ColumnName="BodovaniZar" />
+          <ScalarProperty Name="SplnenoBodovaniZar" ColumnName="SplnenoBodovaniZar" />
+          <ScalarProperty Name="SvarovaniZar" ColumnName="SvarovaniZar" />
+          <ScalarProperty Name="SplnenoSvarovaniZar" ColumnName="SplnenoSvarovaniZar" />
+          <ScalarProperty Name="BrouseniZar" ColumnName="BrouseniZar" />
+          <ScalarProperty Name="SplnenoBrouseniZar" ColumnName="SplnenoBrouseniZar" />
+          <ScalarProperty Name="StrikarnaZar" ColumnName="StrikarnaZar" />
+          <ScalarProperty Name="SplnenoStrikarnaZar" ColumnName="SplnenoStrikarnaZar" />
+          <ScalarProperty Name="RameckyZar" ColumnName="RameckyZar" />
+          <ScalarProperty Name="NarezRameckyZar" ColumnName="NarezRameckyZar" />
+          <ScalarProperty Name="FrezRameckyZar" ColumnName="FrezRameckyZar" />
+          <ScalarProperty Name="SvarRameckyZar" ColumnName="SvarRameckyZar" />
+          <ScalarProperty Name="StriRameckyZar" ColumnName="StriRameckyZar" />
+          <ScalarProperty Name="KompletaceZar" ColumnName="KompletaceZar" />
+          <ScalarProperty Name="SplnenoKompletaceZar" ColumnName="SplnenoKompletaceZar" />
+          <ScalarProperty Name="SkladZar" ColumnName="SkladZar" />
+          <ScalarProperty Name="PlechSkladZar" ColumnName="PlechSkladZar" />
+          <ScalarProperty Name="BarvaSkladZar" ColumnName="BarvaSkladZar" />
+          <ScalarProperty Name="KovaniSkladZar" ColumnName="KovaniSkladZar" />
+          <ScalarProperty Name="SkloSkladZar" ColumnName="SkloSkladZar" />
+          <ScalarProperty Name="PripravaKrid" ColumnName="PripravaKrid" />
+          <ScalarProperty Name="DokumentPripravaKrid" ColumnName="DokumentPripravaKrid" />
+          <ScalarProperty Name="IndocaPripravaKrid" ColumnName="IndocaPripravaKrid" />
+          <ScalarProperty Name="LaserKrid" ColumnName="LaserKrid" />
+          <ScalarProperty Name="PohLaserKrid" ColumnName="PohLaserKrid" />
+          <ScalarProperty Name="NepohLaserKrid" ColumnName="NepohLaserKrid" />
+          <ScalarProperty Name="KlapackaLaserKrid" ColumnName="KlapackaLaserKrid" />
+          <ScalarProperty Name="OkopLaserKrid" ColumnName="OkopLaserKrid" />
+          <ScalarProperty Name="OhybackaKrid" ColumnName="OhybackaKrid" />
+          <ScalarProperty Name="PohOhybackaKrid" ColumnName="PohOhybackaKrid" />
+          <ScalarProperty Name="NepohOhybackaKrid" ColumnName="NepohOhybackaKrid" />
+          <ScalarProperty Name="KlapackaOhybackaKrid" ColumnName="KlapackaOhybackaKrid" />
+          <ScalarProperty Name="BodovaniKrid" ColumnName="BodovaniKrid" />
+          <ScalarProperty Name="SplnenoBodovaniKrid" ColumnName="SplnenoBodovaniKrid" />
+          <ScalarProperty Name="ThermacolKrid" ColumnName="ThermacolKrid" />
+          <ScalarProperty Name="NarezThermacolKrid" ColumnName="NarezThermacolKrid" />
+          <ScalarProperty Name="LepeniThermacolKrid" ColumnName="LepeniThermacolKrid" />
+          <ScalarProperty Name="CncThermacolKrid" ColumnName="CncThermacolKrid" />
+          <ScalarProperty Name="LepeniKrid" ColumnName="LepeniKrid" />
+          <ScalarProperty Name="SplnenoLepeniKrid" ColumnName="SplnenoLepeniKrid" />
+          <ScalarProperty Name="StrikarnaKrid" ColumnName="StrikarnaKrid" />
+          <ScalarProperty Name="SplnenoStrikarnaKrid" ColumnName="SplnenoStrikarnaKrid" />
+          <ScalarProperty Name="RameckyKrid" ColumnName="RameckyKrid" />
+          <ScalarProperty Name="NarezRameckyKrid" ColumnName="NarezRameckyKrid" />
+          <ScalarProperty Name="FrezRameckyKrid" ColumnName="FrezRameckyKrid" />
+          <ScalarProperty Name="SvarRameckyKrid" ColumnName="SvarRameckyKrid" />
+          <ScalarProperty Name="StriRameckyKrid" ColumnName="StriRameckyKrid" />
+          <ScalarProperty Name="KompletaceKrid" ColumnName="KompletaceKrid" />
+          <ScalarProperty Name="SplnenoKompletaceKrid" ColumnName="SplnenoKompletaceKrid" />
+          <ScalarProperty Name="SkladKrid" ColumnName="SkladKrid" />
+          <ScalarProperty Name="PlechSkladKrid" ColumnName="PlechSkladKrid" />
+          <ScalarProperty Name="KovaniSkladKrid" ColumnName="KovaniSkladKrid" />
+          <ScalarProperty Name="BarvaSkladKrid" ColumnName="BarvaSkladKrid" />
+          <ScalarProperty Name="SkloSkladKrid" ColumnName="SkloSkladKrid" />
+          <ScalarProperty Name="PripravaHli" ColumnName="PripravaHli" />
+          <ScalarProperty Name="DokumentPripravaHli" ColumnName="DokumentPripravaHli" />
+          <ScalarProperty Name="IndocaPripravaHli" ColumnName="IndocaPripravaHli" />
+          <ScalarProperty Name="NarezHli" ColumnName="NarezHli" />
+          <ScalarProperty Name="ProfilNarezHli" ColumnName="ProfilNarezHli" />
+          <ScalarProperty Name="ListyNarezHli" ColumnName="ListyNarezHli" />
+          <ScalarProperty Name="CncHli" ColumnName="CncHli" />
+          <ScalarProperty Name="SplnenoCncHli" ColumnName="SplnenoCncHli" />
+          <ScalarProperty Name="FrezaHli" ColumnName="FrezaHli" />
+          <ScalarProperty Name="SplnenoFrezaHli" ColumnName="SplnenoFrezaHli" />
+          <ScalarProperty Name="Priprava2Hli" ColumnName="Priprava2Hli" />
+          <ScalarProperty Name="SplnenoPriprava2Hli" ColumnName="SplnenoPriprava2Hli" />
+          <ScalarProperty Name="StrikarnaHli" ColumnName="StrikarnaHli" />
+          <ScalarProperty Name="SplnenoStrikarnaHli" ColumnName="SplnenoStrikarnaHli" />
+          <ScalarProperty Name="KompletaceHli" ColumnName="KompletaceHli" />
+          <ScalarProperty Name="SplnenoKompletaceHli" ColumnName="SplnenoKompletaceHli" />
+          <ScalarProperty Name="SkladHli" ColumnName="SkladHli" />
+          <ScalarProperty Name="ProfilSkladHli" ColumnName="ProfilSkladHli" />
+          <ScalarProperty Name="BarvaSkladHli" ColumnName="BarvaSkladHli" />
+          <ScalarProperty Name="KovaniSkladHli" ColumnName="KovaniSkladHli" />
+          <ScalarProperty Name="SkloSkladHli" ColumnName="SkloSkladHli" />
+          <ScalarProperty Name="PozadovanyDatum" ColumnName="PozadovanyDatum" />
+          <ScalarProperty Name="DokonceniDatum" ColumnName="DokonceniDatum" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Ulice" ColumnName="Ulice" />
+          <ScalarProperty Name="Cislo" ColumnName="Cislo" />
+          <ScalarProperty Name="Mesto" ColumnName="Mesto" />
+          <ScalarProperty Name="PSC" ColumnName="PSC" />
+          <ScalarProperty Name="PlosnyMaterial" ColumnName="PlosnyMaterial" />
+          <ScalarProperty Name="Poznamky" ColumnName="Poznamky" />
+          <ScalarProperty Name="HotovoBloky" ColumnName="HotovoBloky" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HarmonogramDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PresunDoArchivu" ColumnName="PresunDoArchivu" />
+          <ScalarProperty Name="PresunDoExpedice" ColumnName="PresunDoExpedice" />
+          <ScalarProperty Name="PresunDoVyroby" ColumnName="PresunDoVyroby" />
+          <ScalarProperty Name="Expedice" ColumnName="Expedice" />
+          <ScalarProperty Name="Archiv" ColumnName="Archiv" />
+          <ScalarProperty Name="PristupDrevo" ColumnName="PristupDrevo" />
+          <ScalarProperty Name="PristupOcel" ColumnName="PristupOcel" />
+          <ScalarProperty Name="PristupHlinik" ColumnName="PristupHlinik" />
+          <ScalarProperty Name="Obchod" ColumnName="Obchod" />
+          <ScalarProperty Name="Priprava" ColumnName="Priprava" />
+          <ScalarProperty Name="Oblozky" ColumnName="Oblozky" />
+          <ScalarProperty Name="Stredove" ColumnName="Stredove" />
+          <ScalarProperty Name="Ramecek" ColumnName="Ramecek" />
+          <ScalarProperty Name="Klapacka" ColumnName="Klapacka" />
+          <ScalarProperty Name="Posuv" ColumnName="Posuv" />
+          <ScalarProperty Name="Dvere" ColumnName="Dvere" />
+          <ScalarProperty Name="Dokonceni" ColumnName="Dokonceni" />
+          <ScalarProperty Name="Kompletace" ColumnName="Kompletace" />
+          <ScalarProperty Name="Sklad" ColumnName="Sklad" />
+          <ScalarProperty Name="PripravarVyroby" ColumnName="PripravarVyroby" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,115 @@
+#page-wrapper {
+    margin: auto;
+    width: 40%;
+    font-size: 1.5em;
+}
+
+form {
+    padding: 12px;
+    border-radius: 5px;;
+    margin: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    font-size: large;
+}
+
+form > input {
+    float: left;
+}
+
+table {
+    margin: auto;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    font-size: large;
+    border: 0px solid black;
+}
+
+.btn {
+    color: cornsilk;
+    border: 0px solid black;
+    border-radius: 4px;
+}
+
+.btn-swap {
+    background-color: blue;
+    position: relative;
+    top: 40px;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.btn-cancel {
+    background-color: red;
+}
+
+.btn-save {
+    background-color: green;
+}
+
+.btn-edit {
+    color: black;
+    background-color: yellow;
+}
+
+.td-name {
+    width: 60%;
+
+}
+
+button {
+    padding: 10px;
+}
+
+td, th {
+    align-content: center;
+    border-bottom: 1px solid #ddd;
+    border: 0px solid #ddd;
+    padding: 18px;
+  }
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#title-amount {
+    float: right;
+    margin-right: 20px;
+}
+
+#title-name {
+    padding-left: 20px;
+
+    float: left;
+}
+
+#form-amount {
+    width: 29%;
+}
+
+#form-name {
+    width: 69%;
+}
+
+#row3 {
+    text-align: center;
+}
+
+.btn-submit {
+    margin: 6px;
+    padding: 5px;
+    font-size: 1em;
+    color: blanchedalmond;
+    background-color: royalblue;
+    border-radius: 10px;
+}

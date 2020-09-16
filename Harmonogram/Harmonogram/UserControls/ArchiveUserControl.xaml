@@ -1,0 +1,266 @@
+﻿<UserControl x:Class="Harmonogram.UserControls.ArchiveUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Harmonogram.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="24px" Height="24px"/>
+            <RowDefinition MaxHeight="24px" Height="2*"/>
+            <RowDefinition Height="16*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="White" MaxHeight="24px">
+            <Label>Archiv</Label>
+        </Grid>
+
+        <Grid Grid.Row="1" MaxHeight="24px" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="btnBack" Click="btnBack_Click" Margin="4,1,4,1" Padding="2" >Vratit zpet do pripravy</Button>
+        </Grid>
+        <Grid Grid.Row="2">
+            <DataGrid VirtualizingPanel.IsVirtualizing="True"
+                      VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.VirtualizationMode="Recycling"
+                      EnableRowVirtualization="True" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      x:Name="ArchiveDataGrid"  AutoGenerateColumns="False" SelectedItem="{Binding Current_order}" CanUserAddRows="False">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="Height" Value="64"></Setter>
+                        <Setter Property="SeparatorVisibility" Value="Visible"></Setter>
+                        <Setter Property="SeparatorBrush" Value="Black"></Setter>
+                    </Style>
+                    <Style x:Key="MyTextStyle" TargetType="{x:Type TextBlock}">
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style x:Key="MyTextLeftAlignStyle" TargetType="{x:Type TextBlock}">
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style x:Key="MyHeaderMainCheckBoxStyle" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                        <Setter Property="Width" Value="40"></Setter>
+                        <Setter Property="Height" Value="32"></Setter>
+                        <Setter Property="MaxHeight" Value="32"></Setter>
+                    </Style>
+                    <Style x:Key="MyHeaderOtherCheckBoxStyle" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="White"></Setter>
+                        <Setter Property="Width" Value="64"></Setter>
+                        <Setter Property="Height" Value="32"></Setter>
+                        <Setter Property="MaxHeight" Value="32"></Setter>
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <RotateTransform Angle="270"></RotateTransform>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style x:Key="MyCheckBoxStyle" TargetType="{x:Type CheckBox}">
+                        <Setter Property="Width" Value="16px"></Setter>
+                        <Setter Property="Height" Value="16px"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.8" ScaleY="1.8"></ScaleTransform>
+                                </TransformGroup>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="YellowGreen"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="Yellow"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn IsReadOnly="False">
+                        <DataGridTemplateColumn.Header>
+                            <Label>Archivoval</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="ArchivedBy" Text="{Binding ArchivedBy}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Archivováno dne:</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker IsEnabled="False" Name="ArchivedDate" SelectedDate="{Binding ArchivedDate}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Zahájení</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker IsEnabled="False" Name="ZahajeniDatum" SelectedDate="{Binding ZahajeniDatum}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Technik</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="Technik" Text="{Binding Technik}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Zakázka</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="Zakazka" Text="{Binding Zakazka}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Materiál</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="Material" Text="{Binding Material}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Zakázka č.</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="ZakazkaNr" Text="{Binding ZakazkaNr}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Výrobní č.</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="VyrobniNr" Text="{Binding VyrobniNr}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Křídel</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="KridlaKs" Text="{Binding KridlaKs}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Zárubní</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="ZarubneKs" Text="{Binding ZarubneKs}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Požadované</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker IsEnabled="False" Name="PozadovanyDatum" SelectedDate="{Binding PozadovanyDatum}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="False" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Dokončení</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker IsEnabled="False" Name="DokonceniDatum" SelectedDate="{Binding DokonceniDatum}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="Ulice" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Ulice</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="Ulice" Text="{Binding Ulice}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="Cislo" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Číslo</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="Cislo" Text="{Binding Cislo}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="Mesto" >
+                        <DataGridTemplateColumn.Header>
+                            <Label >Město</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="Mesto" Text="{Binding Mesto}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="PSC" >
+                        <DataGridTemplateColumn.Header>
+                            <Label>PSČ</Label>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="PSC" Text="{Binding PSC}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

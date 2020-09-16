@@ -1,0 +1,58 @@
+<div id="header">
+    <div id="menubar">
+        <a href="homepage">← main page</a>
+	</div>
+</div>
+<br/>
+
+<h1>Shopping cart</h1>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Amount</th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+    </tr>
+    <?php $count = count($items) ?>
+    <?php for ($i = 0; $i < $count; $i+=1) { ?>
+        <tr id="row<?php echo $items[$i]['id'] ?>">
+            <td class="td-name"><?= $items[$i]['name'] ?></td>
+            <td id="text<?php echo $items[$i]['id'] ?>" ><?= $items[$i]['amount'] ?></td>
+            <td class="td-text"><input id="input<?php echo $items[$i]['id'] ?>" class="input-text" type="text" name="amount"></td>
+            <td class="td-swap">
+                <form action="/list" method="post" >
+                    <input type="hidden" name="first_id" value="<?php echo $items[$i]['id'];?>">
+                    <input type="hidden" name="second_id" value="<?php if (!empty($items[$i+1])) echo $items[$i+1]['id'] ?>">
+                    <input id="swap<?php echo $items[$i]['id'] ?>" type="submit" value="↑↓" class="btn btn-swap"></input>
+                </form> 
+            </td>
+            <td class="td-edit"><button id="edit<?php echo $items[$i]['id'] ?>" onclick="editItem(<?php echo $items[$i]['id'];  ?>)"  class="btn btn-edit">edit</button></td>
+            <td class="td-delete"><button id="delete<?php echo $items[$i]['id'] ?>" onclick="deleteItem(<?php echo $items[$i]['id'];  ?>)"  class="btn btn-delete">delete</button></td>
+            <td class="td-save"><button id="save<?php echo $items[$i]['id'] ?>" onclick="saveItem(<?php echo $items[$i]['id'];  ?>)"  class="btn btn-save">save</button></td>
+            <td class="td-cancel"><button id="cancel<?php echo $items[$i]['id'] ?>" class="btn btn-cancel">cancel</button></td>
+        </tr>
+    <?php } ?>
+</table>
+
+<form method="post" id="form-item">
+    <div id="container">
+        <div>
+            <p id="title-name">Name:</p>
+            <p id="title-amount">Amount:</p>
+        </div>
+        <div>
+            <input id="form-name" type="text" list="products" name="name" required="required" />
+            <datalist id="products">
+                <?php foreach( $names as $name ) : ?>
+                    <option value="<?php echo $name ?>">
+                <?php endforeach ?>
+            </datalist>
+            <input id="form-amount" type="text" name="amount" />
+        </div>
+        <div id="row3">
+            <input class="btn-submit" type="submit" value="Send" />
+        </div>
+    </div>
+</form>

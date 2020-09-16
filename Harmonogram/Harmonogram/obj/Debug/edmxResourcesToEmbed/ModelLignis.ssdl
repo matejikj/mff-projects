@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HarmonogramDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="CarId" />
+    </Key>
+    <Property Name="CarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Expedition">
+    <Key>
+      <PropertyRef Name="ExpeditionId" />
+    </Key>
+    <Property Name="ExpeditionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ExpedicePoradi" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpediceAuto" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpediceDatum" Type="date" />
+    <Property Name="DoplnMat" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpeditedSortNr" Type="int" />
+    <Property Name="KridlaKsZbyvaExpedovat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKsZbyvaExpedovat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExepdiceColor" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="MaterialId" />
+    </Key>
+    <Property Name="MaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SortNr" Type="int" />
+    <Property Name="IsInProccess" Type="bit" Nullable="false" />
+    <Property Name="Department" Type="int" />
+    <Property Name="ArchivedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="ArchivedDate" Type="datetime" />
+    <Property Name="IsArchived" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="Priprava" Type="bit" Nullable="false" />
+    <Property Name="Oblozky" Type="bit" Nullable="false" />
+    <Property Name="Stredove" Type="bit" Nullable="false" />
+    <Property Name="Ramecek" Type="bit" Nullable="false" />
+    <Property Name="Klapacka" Type="bit" Nullable="false" />
+    <Property Name="Posuv" Type="bit" Nullable="false" />
+    <Property Name="Dvere" Type="bit" Nullable="false" />
+    <Property Name="Dokonceni" Type="bit" Nullable="false" />
+    <Property Name="Kompletace" Type="bit" Nullable="false" />
+    <Property Name="Sklad" Type="bit" Nullable="false" />
+    <Property Name="ZahajeniDatum" Type="date" />
+    <Property Name="Technik" Type="nvarchar" MaxLength="20" />
+    <Property Name="Zakazka" Type="nvarchar" MaxLength="150" />
+    <Property Name="Material" Type="nvarchar" MaxLength="150" />
+    <Property Name="ZakazkaColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaterialColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZakazkaNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="VyrobniNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaText" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaKs" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneText" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKs" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dokumentace" Type="bit" Nullable="false" />
+    <Property Name="InDoca" Type="bit" Nullable="false" />
+    <Property Name="DocUrl" Type="nvarchar" MaxLength="250" />
+    <Property Name="ObalovatOblozky" Type="bit" Nullable="false" />
+    <Property Name="RezatOblozky" Type="bit" Nullable="false" />
+    <Property Name="CncOblozky" Type="bit" Nullable="false" />
+    <Property Name="CentrumStredove" Type="bit" Nullable="false" />
+    <Property Name="LisStredove" Type="bit" Nullable="false" />
+    <Property Name="OlepovaniStredove" Type="bit" Nullable="false" />
+    <Property Name="FrezovaniStredove" Type="bit" Nullable="false" />
+    <Property Name="TypRamecek" Type="bit" Nullable="false" />
+    <Property Name="ObalovaniRamecek" Type="bit" Nullable="false" />
+    <Property Name="RezaniRamecek" Type="bit" Nullable="false" />
+    <Property Name="ObalovaniKlapacka" Type="bit" Nullable="false" />
+    <Property Name="RezaniKlapacka" Type="bit" Nullable="false" />
+    <Property Name="HranolPosuv" Type="bit" Nullable="false" />
+    <Property Name="GarnyzPosuv" Type="bit" Nullable="false" />
+    <Property Name="DorazovaPosuv" Type="bit" Nullable="false" />
+    <Property Name="CentrumDvere" Type="bit" Nullable="false" />
+    <Property Name="KorpusyDvere" Type="bit" Nullable="false" />
+    <Property Name="SesazenkyDvere" Type="bit" Nullable="false" />
+    <Property Name="LisDvere" Type="bit" Nullable="false" />
+    <Property Name="FormatkaDvere" Type="bit" Nullable="false" />
+    <Property Name="OlepovackaDvere" Type="bit" Nullable="false" />
+    <Property Name="CncDvere" Type="bit" Nullable="false" />
+    <Property Name="PgmDvere" Type="bit" Nullable="false" />
+    <Property Name="BrouseniDyhaDokonceni" Type="bit" Nullable="false" />
+    <Property Name="ZakladDokonceni" Type="bit" Nullable="false" />
+    <Property Name="BrouseniZakladDokonceni" Type="bit" Nullable="false" />
+    <Property Name="VrchDokonceni" Type="bit" Nullable="false" />
+    <Property Name="DvereKompletace" Type="bit" Nullable="false" />
+    <Property Name="ZarubenKompletace" Type="bit" Nullable="false" />
+    <Property Name="KovaniSklad" Type="bit" Nullable="false" />
+    <Property Name="SkloSklad" Type="bit" Nullable="false" />
+    <Property Name="PripravaZar" Type="bit" Nullable="false" />
+    <Property Name="DokumentPripravaZar" Type="bit" Nullable="false" />
+    <Property Name="InDocaPripravaZar" Type="bit" Nullable="false" />
+    <Property Name="LaserZar" Type="bit" Nullable="false" />
+    <Property Name="PohLaserZar" Type="bit" Nullable="false" />
+    <Property Name="NepohLaserZar" Type="bit" Nullable="false" />
+    <Property Name="PoutecLaserZar" Type="bit" Nullable="false" />
+    <Property Name="NuzkyZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoNuzkyZar" Type="bit" Nullable="false" />
+    <Property Name="OhybackaZar" Type="bit" Nullable="false" />
+    <Property Name="PohOhybackaZar" Type="bit" Nullable="false" />
+    <Property Name="NepohOhybackaZar" Type="bit" Nullable="false" />
+    <Property Name="PoutecOhybackaZar" Type="bit" Nullable="false" />
+    <Property Name="PilaZar" Type="bit" Nullable="false" />
+    <Property Name="PohPilaZar" Type="bit" Nullable="false" />
+    <Property Name="NepohPilaZar" Type="bit" Nullable="false" />
+    <Property Name="VyrazeckaZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoVyrazeckaZar" Type="bit" Nullable="false" />
+    <Property Name="BodovaniZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoBodovaniZar" Type="bit" Nullable="false" />
+    <Property Name="SvarovaniZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoSvarovaniZar" Type="bit" Nullable="false" />
+    <Property Name="BrouseniZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoBrouseniZar" Type="bit" Nullable="false" />
+    <Property Name="StrikarnaZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoStrikarnaZar" Type="bit" Nullable="false" />
+    <Property Name="RameckyZar" Type="bit" Nullable="false" />
+    <Property Name="NarezRameckyZar" Type="bit" Nullable="false" />
+    <Property Name="FrezRameckyZar" Type="bit" Nullable="false" />
+    <Property Name="SvarRameckyZar" Type="bit" Nullable="false" />
+    <Property Name="StriRameckyZar" Type="bit" Nullable="false" />
+    <Property Name="KompletaceZar" Type="bit" Nullable="false" />
+    <Property Name="SplnenoKompletaceZar" Type="bit" Nullable="false" />
+    <Property Name="SkladZar" Type="bit" Nullable="false" />
+    <Property Name="PlechSkladZar" Type="bit" Nullable="false" />
+    <Property Name="BarvaSkladZar" Type="bit" Nullable="false" />
+    <Property Name="KovaniSkladZar" Type="bit" Nullable="false" />
+    <Property Name="SkloSkladZar" Type="bit" Nullable="false" />
+    <Property Name="PripravaKrid" Type="bit" Nullable="false" />
+    <Property Name="DokumentPripravaKrid" Type="bit" Nullable="false" />
+    <Property Name="IndocaPripravaKrid" Type="bit" Nullable="false" />
+    <Property Name="LaserKrid" Type="bit" Nullable="false" />
+    <Property Name="PohLaserKrid" Type="bit" Nullable="false" />
+    <Property Name="NepohLaserKrid" Type="bit" Nullable="false" />
+    <Property Name="KlapackaLaserKrid" Type="bit" Nullable="false" />
+    <Property Name="OkopLaserKrid" Type="bit" Nullable="false" />
+    <Property Name="OhybackaKrid" Type="bit" Nullable="false" />
+    <Property Name="PohOhybackaKrid" Type="bit" Nullable="false" />
+    <Property Name="NepohOhybackaKrid" Type="bit" Nullable="false" />
+    <Property Name="KlapackaOhybackaKrid" Type="bit" Nullable="false" />
+    <Property Name="BodovaniKrid" Type="bit" Nullable="false" />
+    <Property Name="SplnenoBodovaniKrid" Type="bit" Nullable="false" />
+    <Property Name="ThermacolKrid" Type="bit" Nullable="false" />
+    <Property Name="NarezThermacolKrid" Type="bit" Nullable="false" />
+    <Property Name="LepeniThermacolKrid" Type="bit" Nullable="false" />
+    <Property Name="CncThermacolKrid" Type="bit" Nullable="false" />
+    <Property Name="LepeniKrid" Type="bit" Nullable="false" />
+    <Property Name="SplnenoLepeniKrid" Type="bit" Nullable="false" />
+    <Property Name="StrikarnaKrid" Type="bit" Nullable="false" />
+    <Property Name="SplnenoStrikarnaKrid" Type="bit" Nullable="false" />
+    <Property Name="RameckyKrid" Type="bit" Nullable="false" />
+    <Property Name="NarezRameckyKrid" Type="bit" Nullable="false" />
+    <Property Name="FrezRameckyKrid" Type="bit" Nullable="false" />
+    <Property Name="SvarRameckyKrid" Type="bit" Nullable="false" />
+    <Property Name="StriRameckyKrid" Type="bit" Nullable="false" />
+    <Property Name="KompletaceKrid" Type="bit" Nullable="false" />
+    <Property Name="SplnenoKompletaceKrid" Type="bit" Nullable="false" />
+    <Property Name="SkladKrid" Type="bit" Nullable="false" />
+    <Property Name="PlechSkladKrid" Type="bit" Nullable="false" />
+    <Property Name="KovaniSkladKrid" Type="bit" Nullable="false" />
+    <Property Name="BarvaSkladKrid" Type="bit" Nullable="false" />
+    <Property Name="SkloSkladKrid" Type="bit" Nullable="false" />
+    <Property Name="PripravaHli" Type="bit" Nullable="false" />
+    <Property Name="DokumentPripravaHli" Type="bit" Nullable="false" />
+    <Property Name="IndocaPripravaHli" Type="bit" Nullable="false" />
+    <Property Name="NarezHli" Type="bit" Nullable="false" />
+    <Property Name="ProfilNarezHli" Type="bit" Nullable="false" />
+    <Property Name="ListyNarezHli" Type="bit" Nullable="false" />
+    <Property Name="CncHli" Type="bit" Nullable="false" />
+    <Property Name="SplnenoCncHli" Type="bit" Nullable="false" />
+    <Property Name="FrezaHli" Type="bit" Nullable="false" />
+    <Property Name="SplnenoFrezaHli" Type="bit" Nullable="false" />
+    <Property Name="Priprava2Hli" Type="bit" Nullable="false" />
+    <Property Name="SplnenoPriprava2Hli" Type="bit" Nullable="false" />
+    <Property Name="StrikarnaHli" Type="bit" Nullable="false" />
+    <Property Name="SplnenoStrikarnaHli" Type="bit" Nullable="false" />
+    <Property Name="KompletaceHli" Type="bit" Nullable="false" />
+    <Property Name="SplnenoKompletaceHli" Type="bit" Nullable="false" />
+    <Property Name="SkladHli" Type="bit" Nullable="false" />
+    <Property Name="ProfilSkladHli" Type="bit" Nullable="false" />
+    <Property Name="BarvaSkladHli" Type="bit" Nullable="false" />
+    <Property Name="KovaniSkladHli" Type="bit" Nullable="false" />
+    <Property Name="SkloSkladHli" Type="bit" Nullable="false" />
+    <Property Name="PozadovanyDatum" Type="date" />
+    <Property Name="DokonceniDatum" Type="date" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ulice" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cislo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mesto" Type="nvarchar" MaxLength="50" />
+    <Property Name="PSC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlosnyMaterial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Poznamky" Type="nvarchar" MaxLength="150" />
+    <Property Name="HotovoBloky" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="Username" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" />
+    <Property Name="PresunDoArchivu" Type="bit" />
+    <Property Name="PresunDoExpedice" Type="bit" />
+    <Property Name="PresunDoVyroby" Type="bit" />
+    <Property Name="Expedice" Type="bit" />
+    <Property Name="Archiv" Type="bit" />
+    <Property Name="PristupDrevo" Type="bit" />
+    <Property Name="PristupOcel" Type="bit" />
+    <Property Name="PristupHlinik" Type="bit" />
+    <Property Name="Obchod" Type="bit" />
+    <Property Name="Priprava" Type="bit" />
+    <Property Name="Oblozky" Type="bit" />
+    <Property Name="Stredove" Type="bit" />
+    <Property Name="Ramecek" Type="bit" />
+    <Property Name="Klapacka" Type="bit" />
+    <Property Name="Posuv" Type="bit" />
+    <Property Name="Dvere" Type="bit" />
+    <Property Name="Dokonceni" Type="bit" />
+    <Property Name="Kompletace" Type="bit" />
+    <Property Name="Sklad" Type="bit" />
+    <Property Name="PripravarVyroby" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Expedition_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Expedition" Type="Self.Expedition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="Expedition">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HarmonogramDBModelStoreContainer">
+    <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expedition" EntityType="Self.Expedition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Expedition_Order" Association="Self.FK_Expedition_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Expedition" EntitySet="Expedition" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

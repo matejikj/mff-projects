@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HarmonogramDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="CarId" />
+    </Key>
+    <Property Name="CarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Expedition">
+    <Key>
+      <PropertyRef Name="ExpeditionId" />
+    </Key>
+    <Property Name="ExpeditionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ExpedicePoradi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpediceAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpediceDatum" Type="DateTime" Precision="0" />
+    <Property Name="DoplnMat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KridlaKsExpedovanych" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZarubneKsExpedovanych" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpeditedSortNr" Type="Int32" />
+    <Property Name="KridlaKsZbyvaExpedovat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZarubneKsZbyvaExpedovat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExepdiceColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Expedition_Order" FromRole="Expedition" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="MaterialId" />
+    </Key>
+    <Property Name="MaterialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SortNr" Type="Int32" />
+    <Property Name="IsInProccess" Type="Boolean" Nullable="false" />
+    <Property Name="Department" Type="Int32" />
+    <Property Name="ArchivedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ArchivedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsArchived" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+    <Property Name="DeletedBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Priprava" Type="Boolean" Nullable="false" />
+    <Property Name="Oblozky" Type="Boolean" Nullable="false" />
+    <Property Name="Stredove" Type="Boolean" Nullable="false" />
+    <Property Name="Ramecek" Type="Boolean" Nullable="false" />
+    <Property Name="Klapacka" Type="Boolean" Nullable="false" />
+    <Property Name="Posuv" Type="Boolean" Nullable="false" />
+    <Property Name="Dvere" Type="Boolean" Nullable="false" />
+    <Property Name="Dokonceni" Type="Boolean" Nullable="false" />
+    <Property Name="Kompletace" Type="Boolean" Nullable="false" />
+    <Property Name="Sklad" Type="Boolean" Nullable="false" />
+    <Property Name="ZahajeniDatum" Type="DateTime" Precision="0" />
+    <Property Name="Technik" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Zakazka" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Material" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazkaColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaterialColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZakazkaNr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VyrobniNr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KridlaText" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KridlaKsExpedovanych" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KridlaKs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZarubneText" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZarubneKsExpedovanych" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ZarubneKs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dokumentace" Type="Boolean" Nullable="false" />
+    <Property Name="InDoca" Type="Boolean" Nullable="false" />
+    <Property Name="DocUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ObalovatOblozky" Type="Boolean" Nullable="false" />
+    <Property Name="RezatOblozky" Type="Boolean" Nullable="false" />
+    <Property Name="CncOblozky" Type="Boolean" Nullable="false" />
+    <Property Name="CentrumStredove" Type="Boolean" Nullable="false" />
+    <Property Name="LisStredove" Type="Boolean" Nullable="false" />
+    <Property Name="OlepovaniStredove" Type="Boolean" Nullable="false" />
+    <Property Name="FrezovaniStredove" Type="Boolean" Nullable="false" />
+    <Property Name="TypRamecek" Type="Boolean" Nullable="false" />
+    <Property Name="ObalovaniRamecek" Type="Boolean" Nullable="false" />
+    <Property Name="RezaniRamecek" Type="Boolean" Nullable="false" />
+    <Property Name="ObalovaniKlapacka" Type="Boolean" Nullable="false" />
+    <Property Name="RezaniKlapacka" Type="Boolean" Nullable="false" />
+    <Property Name="HranolPosuv" Type="Boolean" Nullable="false" />
+    <Property Name="GarnyzPosuv" Type="Boolean" Nullable="false" />
+    <Property Name="DorazovaPosuv" Type="Boolean" Nullable="false" />
+    <Property Name="CentrumDvere" Type="Boolean" Nullable="false" />
+    <Property Name="KorpusyDvere" Type="Boolean" Nullable="false" />
+    <Property Name="SesazenkyDvere" Type="Boolean" Nullable="false" />
+    <Property Name="LisDvere" Type="Boolean" Nullable="false" />
+    <Property Name="FormatkaDvere" Type="Boolean" Nullable="false" />
+    <Property Name="OlepovackaDvere" Type="Boolean" Nullable="false" />
+    <Property Name="CncDvere" Type="Boolean" Nullable="false" />
+    <Property Name="PgmDvere" Type="Boolean" Nullable="false" />
+    <Property Name="BrouseniDyhaDokonceni" Type="Boolean" Nullable="false" />
+    <Property Name="ZakladDokonceni" Type="Boolean" Nullable="false" />
+    <Property Name="BrouseniZakladDokonceni" Type="Boolean" Nullable="false" />
+    <Property Name="VrchDokonceni" Type="Boolean" Nullable="false" />
+    <Property Name="DvereKompletace" Type="Boolean" Nullable="false" />
+    <Property Name="ZarubenKompletace" Type="Boolean" Nullable="false" />
+    <Property Name="KovaniSklad" Type="Boolean" Nullable="false" />
+    <Property Name="SkloSklad" Type="Boolean" Nullable="false" />
+    <Property Name="PripravaZar" Type="Boolean" Nullable="false" />
+    <Property Name="DokumentPripravaZar" Type="Boolean" Nullable="false" />
+    <Property Name="InDocaPripravaZar" Type="Boolean" Nullable="false" />
+    <Property Name="LaserZar" Type="Boolean" Nullable="false" />
+    <Property Name="PohLaserZar" Type="Boolean" Nullable="false" />
+    <Property Name="NepohLaserZar" Type="Boolean" Nullable="false" />
+    <Property Name="PoutecLaserZar" Type="Boolean" Nullable="false" />
+    <Property Name="NuzkyZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoNuzkyZar" Type="Boolean" Nullable="false" />
+    <Property Name="OhybackaZar" Type="Boolean" Nullable="false" />
+    <Property Name="PohOhybackaZar" Type="Boolean" Nullable="false" />
+    <Property Name="NepohOhybackaZar" Type="Boolean" Nullable="false" />
+    <Property Name="PoutecOhybackaZar" Type="Boolean" Nullable="false" />
+    <Property Name="PilaZar" Type="Boolean" Nullable="false" />
+    <Property Name="PohPilaZar" Type="Boolean" Nullable="false" />
+    <Property Name="NepohPilaZar" Type="Boolean" Nullable="false" />
+    <Property Name="VyrazeckaZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoVyrazeckaZar" Type="Boolean" Nullable="false" />
+    <Property Name="BodovaniZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoBodovaniZar" Type="Boolean" Nullable="false" />
+    <Property Name="SvarovaniZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoSvarovaniZar" Type="Boolean" Nullable="false" />
+    <Property Name="BrouseniZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoBrouseniZar" Type="Boolean" Nullable="false" />
+    <Property Name="StrikarnaZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoStrikarnaZar" Type="Boolean" Nullable="false" />
+    <Property Name="RameckyZar" Type="Boolean" Nullable="false" />
+    <Property Name="NarezRameckyZar" Type="Boolean" Nullable="false" />
+    <Property Name="FrezRameckyZar" Type="Boolean" Nullable="false" />
+    <Property Name="SvarRameckyZar" Type="Boolean" Nullable="false" />
+    <Property Name="StriRameckyZar" Type="Boolean" Nullable="false" />
+    <Property Name="KompletaceZar" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoKompletaceZar" Type="Boolean" Nullable="false" />
+    <Property Name="SkladZar" Type="Boolean" Nullable="false" />
+    <Property Name="PlechSkladZar" Type="Boolean" Nullable="false" />
+    <Property Name="BarvaSkladZar" Type="Boolean" Nullable="false" />
+    <Property Name="KovaniSkladZar" Type="Boolean" Nullable="false" />
+    <Property Name="SkloSkladZar" Type="Boolean" Nullable="false" />
+    <Property Name="PripravaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="DokumentPripravaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="IndocaPripravaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="LaserKrid" Type="Boolean" Nullable="false" />
+    <Property Name="PohLaserKrid" Type="Boolean" Nullable="false" />
+    <Property Name="NepohLaserKrid" Type="Boolean" Nullable="false" />
+    <Property Name="KlapackaLaserKrid" Type="Boolean" Nullable="false" />
+    <Property Name="OkopLaserKrid" Type="Boolean" Nullable="false" />
+    <Property Name="OhybackaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="PohOhybackaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="NepohOhybackaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="KlapackaOhybackaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="BodovaniKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoBodovaniKrid" Type="Boolean" Nullable="false" />
+    <Property Name="ThermacolKrid" Type="Boolean" Nullable="false" />
+    <Property Name="NarezThermacolKrid" Type="Boolean" Nullable="false" />
+    <Property Name="LepeniThermacolKrid" Type="Boolean" Nullable="false" />
+    <Property Name="CncThermacolKrid" Type="Boolean" Nullable="false" />
+    <Property Name="LepeniKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoLepeniKrid" Type="Boolean" Nullable="false" />
+    <Property Name="StrikarnaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoStrikarnaKrid" Type="Boolean" Nullable="false" />
+    <Property Name="RameckyKrid" Type="Boolean" Nullable="false" />
+    <Property Name="NarezRameckyKrid" Type="Boolean" Nullable="false" />
+    <Property Name="FrezRameckyKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SvarRameckyKrid" Type="Boolean" Nullable="false" />
+    <Property Name="StriRameckyKrid" Type="Boolean" Nullable="false" />
+    <Property Name="KompletaceKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoKompletaceKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SkladKrid" Type="Boolean" Nullable="false" />
+    <Property Name="PlechSkladKrid" Type="Boolean" Nullable="false" />
+    <Property Name="KovaniSkladKrid" Type="Boolean" Nullable="false" />
+    <Property Name="BarvaSkladKrid" Type="Boolean" Nullable="false" />
+    <Property Name="SkloSkladKrid" Type="Boolean" Nullable="false" />
+    <Property Name="PripravaHli" Type="Boolean" Nullable="false" />
+    <Property Name="DokumentPripravaHli" Type="Boolean" Nullable="false" />
+    <Property Name="IndocaPripravaHli" Type="Boolean" Nullable="false" />
+    <Property Name="NarezHli" Type="Boolean" Nullable="false" />
+    <Property Name="ProfilNarezHli" Type="Boolean" Nullable="false" />
+    <Property Name="ListyNarezHli" Type="Boolean" Nullable="false" />
+    <Property Name="CncHli" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoCncHli" Type="Boolean" Nullable="false" />
+    <Property Name="FrezaHli" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoFrezaHli" Type="Boolean" Nullable="false" />
+    <Property Name="Priprava2Hli" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoPriprava2Hli" Type="Boolean" Nullable="false" />
+    <Property Name="StrikarnaHli" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoStrikarnaHli" Type="Boolean" Nullable="false" />
+    <Property Name="KompletaceHli" Type="Boolean" Nullable="false" />
+    <Property Name="SplnenoKompletaceHli" Type="Boolean" Nullable="false" />
+    <Property Name="SkladHli" Type="Boolean" Nullable="false" />
+    <Property Name="ProfilSkladHli" Type="Boolean" Nullable="false" />
+    <Property Name="BarvaSkladHli" Type="Boolean" Nullable="false" />
+    <Property Name="KovaniSkladHli" Type="Boolean" Nullable="false" />
+    <Property Name="SkloSkladHli" Type="Boolean" Nullable="false" />
+    <Property Name="PozadovanyDatum" Type="DateTime" Precision="0" />
+    <Property Name="DokonceniDatum" Type="DateTime" Precision="0" />
+    <Property Name="Adresa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ulice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cislo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mesto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PSC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlosnyMaterial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Poznamky" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="HotovoBloky" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Expeditions" Relationship="Self.FK_Expedition_Order" FromRole="Order" ToRole="Expedition" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="IsAdmin" Type="Boolean" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PresunDoArchivu" Type="Boolean" />
+    <Property Name="PresunDoExpedice" Type="Boolean" />
+    <Property Name="PresunDoVyroby" Type="Boolean" />
+    <Property Name="Expedice" Type="Boolean" />
+    <Property Name="Archiv" Type="Boolean" />
+    <Property Name="PristupDrevo" Type="Boolean" />
+    <Property Name="PristupOcel" Type="Boolean" />
+    <Property Name="PristupHlinik" Type="Boolean" />
+    <Property Name="Obchod" Type="Boolean" />
+    <Property Name="Priprava" Type="Boolean" />
+    <Property Name="Oblozky" Type="Boolean" />
+    <Property Name="Stredove" Type="Boolean" />
+    <Property Name="Ramecek" Type="Boolean" />
+    <Property Name="Klapacka" Type="Boolean" />
+    <Property Name="Posuv" Type="Boolean" />
+    <Property Name="Dvere" Type="Boolean" />
+    <Property Name="Dokonceni" Type="Boolean" />
+    <Property Name="Kompletace" Type="Boolean" />
+    <Property Name="Sklad" Type="Boolean" />
+    <Property Name="PripravarVyroby" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Expedition_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Expedition" Type="Self.Expedition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="Expedition">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HarmonogramDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cars" EntityType="Self.Car" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Expeditions" EntityType="Self.Expedition" />
+    <EntitySet Name="Materials" EntityType="Self.Material" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Expedition_Order" Association="Self.FK_Expedition_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Expedition" EntitySet="Expeditions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

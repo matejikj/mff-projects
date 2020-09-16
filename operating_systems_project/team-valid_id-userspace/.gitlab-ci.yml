@@ -1,0 +1,25 @@
+image: mffd3s/nswi004-mips32:latest
+
+#cstyle:
+#  script:
+#    - find . -not -path "./tools/*" -name '*.[ch]' | while read fname; do clang-format --style=file "$fname" | diff -u "$fname" - || exit 1; done
+
+assignment-01:
+  script:
+    - ./tools/tester.py suite --verbose suite_as1.txt
+
+assignment-02:
+  script:
+    - ./tools/tester.py suite --verbose suite_as2.txt
+
+assignment-03:
+  script:
+    - ./tools/tester.py suite --verbose suite_as3.txt
+
+assignment-04:
+  script:
+    - ./tools/tester.py suite --verbose suite_as4.txt
+
+assignment-05:
+  script:
+    - ./tools/tester.py suite --verbose suite_as5.txt

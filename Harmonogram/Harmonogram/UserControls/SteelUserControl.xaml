@@ -1,0 +1,1831 @@
+﻿<UserControl x:Class="Harmonogram.UserControls.SteelUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Harmonogram.UserControls"
+             xmlns:local1="clr-namespace:Harmonogram.Converters"
+             xmlns:util="clr-namespace:Harmonogram.Helper"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="Window_Loaded"
+             Unloaded="UserControl_Unloaded"
+             >
+    <Grid>
+        <Grid.Resources>
+            <local1:DateBackgroundConverter x:Key="dateBackgroundConverter"/>
+            <local1:MaterialBackgroundConverter x:Key="materialBackgroundConverter"/>
+            <local1:VisibilityConverter x:Key="visibilityConverter"/>
+        </Grid.Resources>
+        <Grid x:Name="Grid" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Name="TitleRow" MaxHeight="24px" Height="24px"/>
+                <RowDefinition Name="ToolbarRow" MaxHeight="24px" Height="24px"/>
+                <RowDefinition Name="DatagridRow" Height="16*"/>
+                <RowDefinition Name="ShowShopPart" MaxHeight="24px" Height="24px"/>
+                <RowDefinition Name="NewTitleRow" MaxHeight="24px" Height="24px"/>
+                <RowDefinition Name="NewToolbarRow" MaxHeight="24px" Height="24px"/>
+                <RowDefinition Name="NewDatagridRow" Height="12*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="White" MaxHeight="24px">
+                <Label x:Name="DepartmentTitle">Příprava Ocel</Label>
+            </Grid>
+
+            <Grid Grid.Row="1" MaxHeight="24px" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="btnDelete" Click="btnDelete_Click" Width="64px" Padding="2" Margin="3,1,4,1" HorizontalAlignment="Right" >Odstranit</Button>
+                <Button Grid.Column="1" Name="btnMove" Click="btnMove_Click" Padding="2" Margin="0,1,4,1" >Presun radku</Button>
+                <Button Grid.Column="2" Name="btnArchive" Click="btnArchive_Click" Padding="2" Margin="0,1,4,1" >Archiv</Button>
+                <Button Grid.Column="3" Name="btnExpedition" Click="btnExpedition_Click" Padding="2" Margin="0,1,4,1" >Expedice</Button>
+                <Button Grid.Column="4" Name="btnRefresh" Click="btnRefresh_Click" Padding="2" Margin="0,1,4,1" >Obnovit</Button>
+                <Button Grid.Column="5" Name="btnBackToShop" Click="btnBackToShop_Click" Padding="2" Margin="0,1,4,1" >Zpět obchod</Button>
+                <Button Grid.Column="6" Click="btnPrint_Click" Name="btnPrint" Padding="2" Margin="0,1,4,1">Vytisknout</Button>
+                <Button Grid.Column="7" Name="btnNewRow" Click="btnNewRow_Click" Padding="2" Margin="0,1,4,1" >Vložit prázdný řádek</Button>
+                <Button Grid.Column="7" Name="btnReset" Click="btnReset_Click" Padding="2" Margin="0,1,4,1" >Opravit číslování</Button>
+
+                <Popup x:Name="Popupek" Placement="Bottom" StaysOpen="False" Width="200">
+                    <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1" >
+                        <StackPanel Margin="5,5,5,15">
+                            <RadioButton x:Name="popupChck1" GroupName="Choice" Content="Splneno" IsChecked="True"/>
+                            <RadioButton x:Name="popupChck2" GroupName="Choice" Content="Nevyrábí se" />
+                            <RadioButton x:Name="popupChck3" Checked="choiceRadioBtn_Checked" Unchecked="choiceRadioBtn_Unchecked" GroupName="Choice" Content="Vlozit dodatecny text" />
+                            <TextBlock x:Name="popupText1" Visibility="Collapsed">Doplnujici info:</TextBlock>
+                            <TextBox MaxLength="29" Visibility="Collapsed" x:Name="popupText2"></TextBox>
+                            <TextBlock x:Name="popupText3" Visibility="Collapsed"></TextBlock>
+                            <Button Visibility="Collapsed" x:Name="popupColorBtn" Click="PopupColorBtn_changed" Content="Klikni pro zmenu barvy" ></Button>
+                            <RadioButton x:Name="popupChck4" GroupName="Choice" Content="Zrusit" IsChecked="True"/>
+
+                            <TextBlock></TextBlock>
+                            <Button Padding="2,2,2,2" Click="PopupSave_Click" Content="Uloz"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+
+                <Popup x:Name="PopPresun" Placement="Bottom" StaysOpen="False" Width="200">
+                    <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1" >
+                        <StackPanel Margin="5,5,5,15">
+                            <TextBox x:Name="PopPresunText"></TextBox>
+                            <Button Padding="2,2,2,2" Click="PopPresun_Click" Content="Presun"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+
+                <TextBlock x:Name="VyberVarovani" Visibility="Collapsed" Grid.Column="6" Margin="0.6,4,-141.4,3" Background="OrangeRed">Nelze provést akci, není vybrán žádný řádek</TextBlock>
+                <TextBlock x:Name="CisloVarovani" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Margin="153.8,4,-263.8,4" Background="OrangeRed" Grid.Column="8">Nebylo vloženo číslo</TextBlock>
+                <TextBlock x:Name="Ulozeno" Visibility="Collapsed" Margin="289.8,5,-404.8,4" Background="LimeGreen" Grid.Column="8">Nový text uložen</TextBlock>
+            </Grid>
+            <Grid Grid.Row="2">
+                <DataGrid VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.VirtualizationMode="Recycling"
+                              EnableRowVirtualization="True" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                              x:Name="SteelDatagrid" AutoGenerateColumns="False" SelectedItem="{Binding Current_order}" CanUserAddRows="False"
+                              FrozenColumnCount="13" CanUserDeleteRows="False" CanUserSortColumns="False"
+                              >
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="{Binding Color}"></Setter>
+                            <Style.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="DarkGray"/>
+                            </Style.Resources>
+                        </Style>
+                    </DataGrid.RowStyle>
+                    <DataGrid.Resources>
+                        <Style x:Key="MyHeaderMainCheckBoxStyle2" TargetType="{x:Type DataGridColumnHeader}" >
+                            <Setter Property="Background" Value="#FFDCD5D5"></Setter>
+                            <Setter Property="Width" Value="64"></Setter>
+                            <Setter Property="Height" Value="32"></Setter>
+                            <Setter Property="MaxHeight" Value="32"></Setter>
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="270"></RotateTransform>
+                                </Setter.Value>
+                            </Setter>
+                            <EventSetter Event="Click" Handler="CheckBoxHeader_Click" />
+                        </Style>
+
+                        <Style TargetType="Label" x:Key="SvisleOranzove">
+                            <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                            <Setter Property="Width" Value="64"></Setter>
+                            <Setter Property="Height" Value="32"></Setter>
+                            <Setter Property="MaxHeight" Value="32"></Setter>
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="270"></RotateTransform>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                        <Style TargetType="Label" x:Key="SvisleOranzove2">
+                            <Setter Property="Background" Value="#FFE65E11"></Setter>
+                            <Setter Property="Width" Value="64"></Setter>
+                            <Setter Property="Height" Value="32"></Setter>
+                            <Setter Property="MaxHeight" Value="32"></Setter>
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="270"></RotateTransform>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        
+                        <Style x:Key="MyCheckbox" TargetType="{x:Type CheckBox}">
+                            <Setter Property="Width" Value="16px"></Setter>
+                            <Setter Property="Height" Value="16px"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.8" ScaleY="1.8"></ScaleTransform>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="YellowGreen"></Setter>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="Yellow"></Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                            <Setter Property="Height" Value="64"></Setter>
+                            <Setter Property="SeparatorVisibility" Value="Visible"></Setter>
+                            <Setter Property="SeparatorBrush" Value="Black"></Setter>
+                        </Style>
+                        <Style x:Key="MyHeaderMainCheckBoxStyle" TargetType="{x:Type DataGridColumnHeader}" >
+                            <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                            <Setter Property="Width" Value="64"></Setter>
+                            <Setter Property="Height" Value="32"></Setter>
+                            <Setter Property="MaxHeight" Value="32"></Setter>
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <RotateTransform Angle="270"></RotateTransform>
+                                </Setter.Value>
+                            </Setter>
+                            <EventSetter Event="Click" Handler="CheckBoxHeader_Click" />
+                        </Style>
+
+                        <Style x:Key="MyBtnTextStyle" TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        </Style>
+
+
+                        <Style x:Key="MyBtnStyle" TargetType="{x:Type Button}">
+                            <Setter Property="Width" Value="16px"></Setter>
+                            <Setter Property="Height" Value="16px"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            <Setter Property="LayoutTransform">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1.8" ScaleY="1.8"></ScaleTransform>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+
+                        <Style x:Key="MyTextStyle" TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        </Style>
+                        <Style x:Key="MyTextLeftAlignStyle" TargetType="{x:Type TextBlock}">
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn IsReadOnly="True" ElementStyle="{StaticResource MyTextStyle}" Width="76" Binding="{Binding SortNr}">
+                            <DataGridTextColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Name="btnColumnsFilter" Margin="3,0,0,0" Click="btnColumnsFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\hide.ico" Width="30" Height="30" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="ColumnsFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnColumnsFilter}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox MaxHeight="300px" x:Name="listBoxColumns" VerticalAlignment="Stretch" SelectionMode="Multiple" >
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="ColumnsChecked" Unchecked="ColumnsChecked" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button Click="ButtonHide_Click">Skrýt okýnko</Button>
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+                        
+                        <DataGridTemplateColumn x:Name="ZahajeniDatum" Header="ZahajeniDatum" IsReadOnly="True" MinWidth="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DatePicker Visibility="{Binding NotBlank, Converter={StaticResource visibilityConverter}}" IsEnabled="False" SelectedDateChanged="DatePicker_SelectedDateChanged" SelectedDate="{Binding Path=ZahajeniDatum}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn IsReadOnly="True" ElementStyle="{StaticResource MyTextStyle}" Width="70" Binding="{Binding Technik}" x:Name="Technik">
+                            <DataGridTextColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Technik" />
+                                    <Button Name="btnTechnikFilter" Margin="3,0,0,0" Click="btnFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\filter.ico" Width="20" Height="20" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="TechnikFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnTechnikFilter}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox MaxHeight="300px" x:Name="listBoxTechnik" VerticalAlignment="Stretch" SelectionMode="Multiple" >
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="btnFilter_checked_Click" Unchecked="btnFilter_unchecked_Click" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button x:Name="TechnikFiltrujBtn" Click="filtrujBtn_click" Content="Filtruj" Margin="5,5,5,5">
+                                                </Button>
+                                                <Button x:Name="TechnikAllBtn" Click="allBtn_click" Content="Zobrazit vše" Margin="5,5,5,5">
+                                                </Button>
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTextColumn.Header>
+                        </DataGridTextColumn>
+
+                        <DataGridTemplateColumn Width="120" x:Name="Zakazka">
+                            <DataGridTemplateColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Zakazka" />
+                                    <Button Name="btnZakazkaFilter" Margin="3,0,0,0" Click="btnFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\filter.ico" Width="20" Height="20" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="ZakazkaFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnZakazkaFilter}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox MaxHeight="300" x:Name="listBoxZakazka" VerticalAlignment="Stretch" SelectionMode="Multiple" >
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="btnFilter_checked_Click" Unchecked="btnFilter_unchecked_Click" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button x:Name="ZakazkaFiltrujBtn" Click="filtrujBtn_click" Content="Filtruj" Margin="5,5,5,5">
+                                                </Button>
+                                                <Button x:Name="ZakazkaAllBtn" Click="allBtn_click" Content="Zobrazit vše" Margin="5,5,5,5">
+                                                </Button>
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Label Name="Material" MouseDoubleClick="zakazkaColorBtn_changed" Content="{Binding Zakazka}" Background="{Binding ZakazkaColor}" >
+                                        <Label.ToolTip>
+                                            <TextBlock Text="{Binding Zakazka}"></TextBlock>
+                                        </Label.ToolTip>
+                                    </Label>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn x:Name="TypZarubne" ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="Typ zárubně" Binding="{Binding TypZarubne}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding TypZarubne}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn x:Name="Poznamky" ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="Poznamky" Binding="{Binding Poznamky}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding Poznamky}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTemplateColumn x:Name="Material">
+                            <DataGridTemplateColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Material" />
+                                    <Button Name="btnMaterialFilter" Margin="3,0,0,0" Click="btnFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\filter.ico" Width="20" Height="20" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="MaterialFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnZakazkaMaterial}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox MaxHeight="300" x:Name="listBoxMaterial" VerticalAlignment="Stretch" SelectionMode="Multiple" >
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="btnFilter_checked_Click" Unchecked="btnFilter_unchecked_Click" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button x:Name="MaterialFiltrujBtn" Click="filtrujBtn_click" Content="Filtruj" Margin="5,5,5,5">
+                                                </Button>
+                                                <Button x:Name="MaterialAllBtn" Click="allBtn_click" Content="Zobrazit vše" Margin="5,5,5,5">
+                                                </Button>
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Label Name="Material" MouseDoubleClick="materialColorBtn_changed" Content="{Binding Material}" Background="{Binding MaterialColor}" >
+                                        <Label.ToolTip>
+                                            <TextBlock Text="{Binding Material}"></TextBlock>
+                                        </Label.ToolTip>
+                                    </Label>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding Material}" />
+                                </Style>
+                            </DataGridTemplateColumn.CellStyle>
+
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn x:Name="ZakazkaNr" ElementStyle="{StaticResource MyTextStyle}" Width="110" Binding="{Binding ZakazkaNr}">
+                            <DataGridTextColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Cislo zakazky" />
+                                    <Button Name="btnZakazkaNrFilter" Margin="3,0,0,0" Click="btnFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\filter.ico" Width="20" Height="20" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="ZakazkaNrFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnZakazkaNrFilter}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox MaxHeight="300" x:Name="listBoxZakazkaNr" VerticalAlignment="Stretch" SelectionMode="Multiple" >
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="btnFilter_checked_Click" Unchecked="btnFilter_unchecked_Click" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button x:Name="ZakazkaNrFiltrujBtn" Click="filtrujBtn_click" Content="Filtruj" Margin="5,5,5,5">
+                                                </Button>
+                                                <Button x:Name="ZakazkaNrAllBtn" Click="allBtn_click" Content="Zobrazit vše" Margin="5,5,5,5">
+                                                </Button>
+
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTextColumn.Header>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding ZakazkaNr}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+
+                        </DataGridTextColumn>
+                        
+                        <DataGridTextColumn x:Name="VyrobniNr" ElementStyle="{StaticResource MyTextStyle}" Width="110" Binding="{Binding VyrobniNr}">
+                            <DataGridTextColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Vyrobni cislo" />
+                                    <Button Name="btnVyrobniNrFilter" Margin="3,0,0,0" Click="btnFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\filter.ico" Width="20" Height="20" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="VyrobniNrFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnZakazkaFilter}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox Height="300" x:Name="listBoxVyrobniNr" VerticalAlignment="Stretch" SelectionMode="Multiple" Margin="0,27,0,34">
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="btnFilter_checked_Click" Unchecked="btnFilter_unchecked_Click" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button x:Name="VyrobniNrFiltrujBtn" Click="filtrujBtn_click" Content="Filtruj" Margin="5,5,5,5">
+                                                </Button>
+                                                <Button x:Name="VyrobniNrAllBtn" Click="allBtn_click" Content="Zobrazit vše" Margin="5,5,5,5">
+                                                </Button>
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTextColumn.Header>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding VyrobniNr}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+
+                        </DataGridTextColumn>
+                        
+                        <DataGridTemplateColumn x:Name="Soubor">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Visibility="{Binding NotBlank, Converter={StaticResource visibilityConverter}}" Height="18" MouseUp="HandleLinkClick" Width="20" Source="..\Resources\document.ico"></Image>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTemplateColumn x:Name="editUrl">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Visibility="{Binding NotBlank, Converter={StaticResource visibilityConverter}}" Height="18" MouseUp="HandleEditLinkClick" Width="20" Source="..\Resources\editicon.ico"></Image>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn x:Name="KridlaText" ElementStyle="{StaticResource MyTextStyle}" IsReadOnly="True" Width="50" Header="Křídla" Binding="{Binding KridlaText}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding KridlaText}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTextColumn x:Name="ZarubneText" ElementStyle="{StaticResource MyTextStyle}" IsReadOnly="True" Width="50" Header="Zárubně" Binding="{Binding ZarubneText}">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding ZarubneText}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+
+
+                        <DataGridTemplateColumn Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Priprava." x:Name="PripravaZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding PripravaZarC}" Text="{Binding PripravaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="PripravaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding PripravaZarC}" Text="{Binding PripravaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="PripravaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="DokumentPripravaZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Dokument</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding DokumentPripravaZarC}" Name="DokumentPripravaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding DokumentPripravaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding DokumentPripravaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="InDocaPripravaZar" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">InDoca</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding InDocaPripravaZarC}" Name="InDocaPripravaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding InDocaPripravaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding InDocaPripravaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PohLaserZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Poh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PohLaserZarC}" Name="PohLaserZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PohLaserZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PohLaserZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NepohLaserZar" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Nepoh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NepohLaserZarC}" Name="NepohLaserZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NepohLaserZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NepohLaserZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PoutecLaserZar" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Poutec</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PoutecLaserZarC}" Name="PoutecLaserZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PoutecLaserZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PoutecLaserZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="NuzkyZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Nuzky." x:Name="NuzkyZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding NuzkyZarC}" Text="{Binding NuzkyZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="NuzkyZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding NuzkyZarC}" Text="{Binding NuzkyZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="NuzkyZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoNuzkyZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Poh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoNuzkyZarC}" Name="SplnenoNuzkyZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoNuzkyZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoNuzkyZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="OhybackaZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Ohybacka." x:Name="OhybackaZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding OhybackaZarC}" Text="{Binding OhybackaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="OhybackaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding OhybackaZarC}" Text="{Binding OhybackaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="OhybackaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PohOhybackaZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Poh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PohOhybackaZarC}" Name="PohOhybackaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PohOhybackaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PohOhybackaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NepohOhybackaZar" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Nepoh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NepohOhybackaZarC}" Name="NepohOhybackaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NepohOhybackaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NepohOhybackaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PoutecOhybackaZar" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Poutec</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PoutecOhybackaZarC}" Name="PoutecOhybackaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PoutecOhybackaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PoutecOhybackaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="PilaZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Pila." x:Name="PilaZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding PilaZarC}" Text="{Binding PilaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="PilaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding PilaZarC}" Text="{Binding PilaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="PilaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PohPilaZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Poh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PohPilaZarC}" Name="PohPilaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PohPilaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PohPilaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NepohPilaZar" >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Nepoh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NepohPilaZarC}" Name="NepohPilaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NepohPilaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NepohPilaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="VyrazeckaZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Vyrazecka." x:Name="VyrazeckaZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding VyrazeckaZarC}" Text="{Binding VyrazeckaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="VyrazeckaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding VyrazeckaZarC}" Text="{Binding VyrazeckaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="VyrazeckaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoVyrazeckaZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoVyrazeckaZarC}" Name="SplnenoVyrazeckaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoVyrazeckaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoVyrazeckaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="BodovaniZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Bodovani." x:Name="BodovaniZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding BodovaniZarC}" Text="{Binding BodovaniZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="BodovaniZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding BodovaniZarC}" Text="{Binding BodovaniZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="BodovaniZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoBodovaniZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoBodovaniZarC}" Name="SplnenoBodovaniZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoBodovaniZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoBodovaniZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="SvarovaniZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Svarovani." x:Name="SvarovaniZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding SvarovaniZarC}" Text="{Binding SvarovaniZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="SvarovaniZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding SvarovaniZarC}" Text="{Binding SvarovaniZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="SvarovaniZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoSvarovaniZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoSvarovaniZarC}" Name="SplnenoSvarovaniZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoSvarovaniZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoSvarovaniZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="BrouseniZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Brouseni." x:Name="BrouseniZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding BrouseniZarC}" Text="{Binding BrouseniZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="BrouseniZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding BrouseniZarC}" Text="{Binding BrouseniZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="BrouseniZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoBrouseniZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">SplnenoBrouseni</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoBrouseniZarC}" Name="SplnenoBrouseniZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoBrouseniZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoBrouseniZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="StrikarnaZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Strikarna." x:Name="StrikarnaZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding StrikarnaZarC}" Text="{Binding StrikarnaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="StrikarnaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding StrikarnaZarC}" Text="{Binding StrikarnaZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="StrikarnaZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoStrikarnaZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoStrikarnaZarC}" Name="SplnenoStrikarnaZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoStrikarnaZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoStrikarnaZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="RameckyZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Ramecky." x:Name="RameckyZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding RameckyZarC}" Text="{Binding RameckyZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="RameckyZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding RameckyZarC}" Text="{Binding RameckyZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="RameckyZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NarezRameckyZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Narez</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NarezRameckyZarC}" Name="NarezRameckyZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NarezRameckyZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NarezRameckyZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="FrezRameckyZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Frez</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding FrezRameckyZarC}" Name="FrezRameckyZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding FrezRameckyZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding FrezRameckyZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SvarRameckyZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Svar</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SvarRameckyZarC}" Name="SvarRameckyZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SvarRameckyZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SvarRameckyZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="StriRameckyZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Stri</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding StriRameckyZarC}" Name="StriRameckyZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding StriRameckyZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding StriRameckyZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="KompletaceZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Kompletace." x:Name="KompletaceZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding KompletaceZarC}" Text="{Binding KompletaceZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="KompletaceZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding KompletaceZarC}" Text="{Binding KompletaceZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="KompletaceZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoKompletaceZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoKompletaceZarC}" Name="SplnenoKompletaceZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoKompletaceZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoKompletaceZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="SkladZar" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Sklad." x:Name="SkladZar">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding SkladZarC}" Text="{Binding SkladZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="SkladZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding SkladZarC}" Text="{Binding SkladZar}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="SkladZar"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PlechSkladZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Plech</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PlechSkladZarC}" Name="PlechSkladZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PlechSkladZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PlechSkladZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="BarvaSkladZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Barva</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding BarvaSkladZarC}" Name="BarvaSkladZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding BarvaSkladZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding BarvaSkladZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="KovaniSkladZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Kovani</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding KovaniSkladZarC}" Name="KovaniSkladZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding KovaniSkladZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding KovaniSkladZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SkloSkladZar"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove2}">Sklo</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SkloSkladZarC}" Name="SkloSkladZar" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SkloSkladZar}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SkloSkladZar}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!-- KRIDLA-->
+
+                        <DataGridTemplateColumn util:DatagridName.Name="PripravaKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Priprava" x:Name="PripravaKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding PripravaKridC}" Text="{Binding PripravaKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="PripravaKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding PripravaKridC}" Text="{Binding PripravaKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="PripravaKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="DokumentPripravaKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Dokument</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding DokumentPripravaKridC}" Name="DokumentPripravaKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding DokumentPripravaKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding DokumentPripravaKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="IndocaPripravaKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Indoca</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding IndocaPripravaKridC}" Name="IndocaPripravaKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding IndocaPripravaKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding IndocaPripravaKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="LaserKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Laser" x:Name="LaserKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding LaserKridC}" Text="{Binding LaserKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="LaserKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding LaserKridC}" Text="{Binding LaserKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="LaserKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PohLaserKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Poh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PohLaserKridC}" Name="PohLaserKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PohLaserKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PohLaserKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NepohLaserKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Nepoh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NepohLaserKridC}" Name="NepohLaserKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NepohLaserKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NepohLaserKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="KlapackaLaserKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Klapacka</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding KlapackaLaserKridC}" Name="KlapackaLaserKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding KlapackaLaserKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding KlapackaLaserKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="OkopLaserKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Okop. plech</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding OkopLaserKridC}" Name="OkopLaserKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding OkopLaserKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding OkopLaserKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="OhybackaKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Ohybacka" x:Name="OhybackaKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding OhybackaKridC}" Text="{Binding OhybackaKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="OhybackaKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding OhybackaKridC}" Text="{Binding OhybackaKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="OhybackaKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PohOhybackaKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Poh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PohOhybackaKridC}" Name="PohOhybackaKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PohOhybackaKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PohOhybackaKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NepohOhybackaKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Nepoh.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NepohOhybackaKridC}" Name="NepohOhybackaKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NepohOhybackaKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NepohOhybackaKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="KlapackaOhybackaKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Klapacka</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding KlapackaOhybackaKridC}" Name="KlapackaOhybackaKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding KlapackaOhybackaKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding KlapackaOhybackaKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="BodovaniKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Bodovani" x:Name="BodovaniKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding BodovaniKridC}" Text="{Binding BodovaniKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="BodovaniKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding BodovaniKridC}" Text="{Binding BodovaniKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="BodovaniKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoBodovaniKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoBodovaniKridC}" Name="SplnenoBodovaniKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoBodovaniKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoBodovaniKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="ThermacolKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Thermacol" x:Name="ThermacolKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding ThermacolKridC}" Text="{Binding ThermacolKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="ThermacolKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding ThermacolKridC}" Text="{Binding ThermacolKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="ThermacolKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NarezThermacolKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Narez</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NarezThermacolKridC}" Name="NarezThermacolKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NarezThermacolKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NarezThermacolKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="LepeniThermacolKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Lepeni</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding LepeniThermacolKridC}" Name="LepeniThermacolKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding LepeniThermacolKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding LepeniThermacolKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="CncThermacolKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Cnc</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding CncThermacolKridC}" Name="CncThermacolKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding CncThermacolKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding CncThermacolKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="LepeniKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Lepeni" x:Name="LepeniKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding LepeniKridC}" Text="{Binding LepeniKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="LepeniKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding LepeniKridC}" Text="{Binding LepeniKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="LepeniKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoLepeniKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoLepeniKridC}" Name="SplnenoLepeniKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoLepeniKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoLepeniKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="StrikarnaKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Strikarna" x:Name="StrikarnaKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding StrikarnaKridC}" Text="{Binding StrikarnaKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="StrikarnaKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding StrikarnaKridC}" Text="{Binding StrikarnaKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="StrikarnaKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoStrikarnaKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoStrikarnaKridC}" Name="SplnenoStrikarnaKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoStrikarnaKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoStrikarnaKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn util:DatagridName.Name="RameckyKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Ramecky" x:Name="RameckyKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding RameckyKridC}" Text="{Binding RameckyKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="RameckyKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding RameckyKridC}" Text="{Binding RameckyKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="RameckyKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="NarezRameckyKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Narez</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding NarezRameckyKridC}" Name="NarezRameckyKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding NarezRameckyKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding NarezRameckyKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="FrezRameckyKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Frez.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding FrezRameckyKridC}" Name="FrezRameckyKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding FrezRameckyKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding FrezRameckyKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SvarRameckyKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Svar</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SvarRameckyKridC}" Name="SvarRameckyKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SvarRameckyKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SvarRameckyKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="StriRameckyKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Stri.</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding StriRameckyKridC}" Name="StriRameckyKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding StriRameckyKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding StriRameckyKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="KompletaceKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Kompletace" x:Name="KompletaceKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding KompletaceKridC}" Text="{Binding KompletaceKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="KompletaceKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding KompletaceKridC}" Text="{Binding KompletaceKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="KompletaceKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SplnenoKompletaceKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Splneno</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SplnenoKompletaceKridC}" Name="SplnenoKompletaceKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SplnenoKompletaceKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SplnenoKompletaceKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn util:DatagridName.Name="SkladKrid" Width="60" HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Sklad" x:Name="SkladKrid">
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <TextBox Background="{Binding SkladKridC}" Text="{Binding SkladKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="SkladKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Background="{Binding SkladKridC}" Text="{Binding SkladKrid}" IsEnabled="{Binding PripravaAccess, ElementName=myDepartment}" Name="SkladKrid"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="PlechSkladKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Plech</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding PlechSkladKridC}" Name="PlechSkladKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding PlechSkladKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding PlechSkladKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="KovaniSkladKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Kovani</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding KovaniSkladKridC}" Name="KovaniSkladKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding KovaniSkladKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding KovaniSkladKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="BarvaSkladKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Barva</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding BarvaSkladKridC}" Name="BarvaSkladKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding BarvaSkladKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding BarvaSkladKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Visibility="Hidden" x:Name="SkloSkladKrid"  >
+                            <DataGridTemplateColumn.Header>
+                                <Label Style="{StaticResource SvisleOranzove}">Sklo</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MyBtnStyle}" Background="{Binding SkloSkladKridC}" Name="SkloSkladKrid" Margin="3,0,0,0" Click="Proces_Click">
+                                        <Button.ToolTip>
+                                            <TextBlock Text="{Binding SkloSkladKrid}"></TextBlock>
+                                        </Button.ToolTip>
+                                        <TextBlock Style="{StaticResource MyBtnTextStyle}" Text="{Binding SkloSkladKrid}" ></TextBlock>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn x:Name="PozadovanyDatum" Header="Pozadovany Datum" MinWidth="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DatePicker Background="{Binding PozadovanyColor}" MouseDoubleClick="DatePickerPoz_MouseDoubleClick" Visibility="{Binding NotBlank, Converter={StaticResource visibilityConverter}}" SelectedDateChanged="DatePicker_SelectedDateChanged1" SelectedDate="{Binding Path=PozadovanyDatum}" >
+                                        <DatePicker.ToolTip>
+                                            <TextBlock Text="aa"></TextBlock>
+                                        </DatePicker.ToolTip>
+                                        <DatePicker.Resources>
+                                            <Style TargetType="{x:Type DatePickerTextBox}" >
+                                                <Setter Property="Background" Value="{Binding PozadovanyColor}" />
+                                            </Style>
+                                        </DatePicker.Resources>
+                                    </DatePicker>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn x:Name="DokonceniDatum" Header="Datum dokončení" MinWidth="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DatePicker Background="{Binding DokonceniColor}" MouseDoubleClick="DatePicker_MouseDoubleClick" Visibility="{Binding NotBlank, Converter={StaticResource visibilityConverter}}" MouseEnter="pozadDatum_MouseEnter" SelectedDateChanged="DatePicker_SelectedDateChanged2" SelectedDate="{Binding Path=DokonceniDatum}" >
+                                        <DatePicker.ToolTip>
+                                            <TextBlock Text="aa"></TextBlock>
+                                        </DatePicker.ToolTip>
+                                        <DatePicker.Resources>
+                                            <Style TargetType="{x:Type DatePickerTextBox}" >
+                                                <Setter Property="Background" Value="{Binding DokonceniColor}" />
+                                            </Style>
+                                        </DatePicker.Resources>
+                                    </DatePicker>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn x:Name="Mesto" CanUserSort="False" ElementStyle="{StaticResource MyTextStyle}" Width="50" Binding="{Binding Mesto}">
+                            <DataGridTextColumn.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Město" />
+                                    <Button Name="btnMestoFilter" Margin="3,0,0,0" Click="btnFilter_Click">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <Image Source="..\Resources\filter.ico" Width="20" Height="20" />
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Popup x:Name="MestoFilter" Placement="Bottom" PlacementTarget="{Binding ElementName=btnMestoFilter}" StaysOpen="False" Width="200">
+                                        <Border Background="White" BorderBrush="Gray" BorderThickness="1,1,1,1">
+                                            <StackPanel Margin="5,5,5,15">
+                                                <ListBox Height="300" x:Name="listBoxMesto" VerticalAlignment="Stretch" SelectionMode="Multiple" Margin="0,27,0,34">
+                                                    <ListBox.Resources>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="OverridesDefaultStyle" Value="true" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="true" />
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <CheckBox Checked="btnFilter_checked_Click" Unchecked="btnFilter_unchecked_Click" Margin="5,2" IsChecked="{TemplateBinding IsSelected}">
+                                                                            <ContentPresenter />
+                                                                        </CheckBox>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                </ListBox>
+                                                <Button x:Name="MestoFiltrujBtn" Click="filtrujBtn_click" Content="Filtruj" Margin="5,5,5,5">
+                                                </Button>
+                                                <Button x:Name="MestoAllBtn" Click="allBtn_click" Content="Zobrazit vše" Margin="5,5,5,5">
+                                                </Button>
+
+                                            </StackPanel>
+                                        </Border>
+                                    </Popup>
+                                </StackPanel>
+                            </DataGridTextColumn.Header>
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding Adresa}" />
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        
+                        <DataGridTextColumn Visibility="Hidden" x:Name="Ulice" ElementStyle="{StaticResource MyTextStyle}" Width="50" Header="Ulice" Binding="{Binding Ulice}"></DataGridTextColumn>
+                        <DataGridTextColumn Visibility="Hidden" x:Name="Cislo" ElementStyle="{StaticResource MyTextStyle}" Width="50" Header="Cislo" Binding="{Binding Cislo}"></DataGridTextColumn>
+                        <DataGridTextColumn Visibility="Hidden" x:Name="Psc" ElementStyle="{StaticResource MyTextStyle}" Width="50" Header="PSC" Binding="{Binding PSC}"></DataGridTextColumn>
+                        
+                        <DataGridTemplateColumn x:Name="Adresa">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Visibility="{Binding NotBlank, Converter={StaticResource visibilityConverter}}" Height="18" MouseUp="HandleAddressLinkClick" Width="20" Source="..\Resources\map.ico"></Image>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTextColumn x:Name="PlosnyMaterial" ElementStyle="{StaticResource MyTextStyle}" Width="120" Header="Plosny Material" Binding="{Binding PlosnyMaterial}"></DataGridTextColumn>
+                        
+                        <DataGridTextColumn x:Name="HotovoBloky" ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="HotovoBloky" Binding="{Binding HotovoBloky}"></DataGridTextColumn>
+                    
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+            <Grid x:Name="ShowHideTitleGrid" Grid.Row="3" MaxHeight="24px" HorizontalAlignment="Center">
+                <Button Name="btnShowHideShop" Click="btnShowHideShop_Click" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Content="Zobrazit obchod"></Button>
+            </Grid>
+
+            <Grid x:Name="ShopTitleGrid" Grid.Row="4" Background="White" MaxHeight="24px">
+                <Label Content="Nové zakázky"></Label>
+            </Grid>
+
+            <Grid x:Name="ShopButtonsGrid" Grid.Row="5" MaxHeight="24px" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Width="90px" Grid.Column="0" Name="btnNew" Click="btnNew_Click" Padding="1" Margin="0,1,4,1" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center" >Vytvořit zakázku</Button>
+                <Button Width="64px" Grid.Column="1" Name="btnDelete2" Click="btnDeleteNew_Click" Margin="0,1,4,1" VerticalAlignment="Center" HorizontalAlignment="Left" >Odstranit</Button>
+                <Button Width="147px" Grid.Column="2" Name="btnProccess" Click="btnProccess_Click" Margin="0,2,-53,2" VerticalAlignment="Center" HorizontalAlignment="Left" >Předat ke zpracování</Button>
+
+            </Grid>
+
+            <Grid Grid.Row="6">
+                <DataGrid x:Name="NewSteelDatagrid" AutoGenerateColumns="False" SelectedItem="{Binding Current_new_order}" CanUserAddRows="False" >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="ZahajeniDatum" MinWidth="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DatePicker SelectedDateChanged="DatePicker_SelectedDateChangedNew" SelectedDate="{Binding Path=ZahajeniDatum}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Technik" Width="40" Binding="{Binding Technik}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Zakazka" Width="120" Binding="{Binding Zakazka}"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.Header>
+                                <Label >Materiál</Label>
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate x:Uid="sfajfkou">
+                                <DataTemplate>
+                                    <TextBlock Name="Material" Text="{Binding Material}">
+                                        <TextBlock.Background>
+                                            <MultiBinding Converter="{StaticResource materialBackgroundConverter}">
+                                                <Binding Path="MaterialColor"></Binding>
+                                                <Binding Path="Material"></Binding>
+                                            </MultiBinding>
+                                        </TextBlock.Background>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="ZakazkaNr" Width="70" Binding="{Binding ZakazkaNr}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="VyrobniNr" Binding="{Binding VyrobniNr}"></DataGridTextColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Height="18" MouseUp="HandleLinkClick" Width="20" Source="..\Resources\document.ico"></Image>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

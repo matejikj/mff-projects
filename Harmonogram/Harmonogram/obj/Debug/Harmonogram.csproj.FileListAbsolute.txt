@@ -1,0 +1,869 @@
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\Users\jakub\Documents\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\novaverze\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\novaverze\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\aaaa\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\aaaa\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\produkcni\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\produkcni\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\produkcni - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\Users\pindak\Downloads\produkcni - Copy - Copy (2)\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\Users\jakub\Downloads\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\HarmonogramEE\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Dapper.dll
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\Dapper.xml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\App.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\App.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\git\HarmonogramEE - Copy\Harmonogram\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Dapper.dll
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\Dapper.xml
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\Harmonogram_1_01\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\App.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\App.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_01\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Dapper.dll
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\Dapper.xml
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\App.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\App.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.application
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Dapper.dll
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.dll
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Dapper.xml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.xml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\App.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\App.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\MainWindow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.application
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.exe
+C:\Users\pindak\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.application
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.exe
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Dapper.dll
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.dll
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\Dapper.xml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.xml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\App.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\App.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\MainWindow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.application
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.exe
+C:\Users\jakub\Downloads\Harmonogram_1_02\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Dapper.dll
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\Dapper.xml
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\Harmonogram_1_03\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\App.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\App.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_03\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\App.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Dapper.dll
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Dapper.xml
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\App.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\Harmonogram_1_04\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Newtonsoft.Json.dll
+C:\git\Harmonogram_1_04\Harmonogram\bin\Debug\Newtonsoft.Json.xml
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Harmonogram.exe.config
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Harmonogram.application
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Harmonogram.pdb
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Dapper.dll
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\EntityFramework.dll
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Newtonsoft.Json.dll
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Dapper.xml
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\EntityFramework.xml
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\Harmonogram_1_05\Harmonogram\bin\Debug\Newtonsoft.Json.xml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.csprojAssemblyReference.cache
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\MainWindow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\HistoryUserControl.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\SteelUserControl.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\WoodUserControl.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\EditOrderWindow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\EditUrlWindow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\LoginWindow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\NewBlankRow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\NewOrderWindow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\PrintWindow.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\App.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram_Content.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.cache
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram_MarkupCompile.lref
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\App.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\MainWindow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\AluminiumUserControl.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\ArchiveUserControl.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\ExpeditionUserControl.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\HistoryUserControl.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\SteelUserControl.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\UserControls\WoodUserControl.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\EditOrderWindow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\EditUrlWindow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\LoginWindow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\NewBlankRow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\NewOrderWindow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Windows\PrintWindow.baml
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.g.resources
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.Properties.Resources.resources
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.csproj.GenerateResource.cache
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.exe.manifest
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.application
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.csproj.CopyComplete
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.exe
+C:\git\Harmonogram_1_05\Harmonogram\obj\Debug\Harmonogram.pdb

@@ -1,0 +1,36 @@
+﻿<Window x:Class="Harmonogram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harmonogram"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Harmonogram"
+        Height="450"
+        Width="800"
+        WindowState="Maximized"
+        Closing="Window_Closing"
+        >
+    <Grid>
+        <Menu Name="mainMenu" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="4" Margin="0,0,-0.4,0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <MenuItem Header="Oddělení" x:Name="departmentMenuItem">
+                <MenuItem Click="WoodMenuItem_click" Header="Dřevo">
+                </MenuItem>
+
+                <MenuItem Click="AluminiumMenuItem_click" Header="Hliník">
+                </MenuItem>
+                <MenuItem Click="SteelMenuItem_click" Header="Ocel">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Click="ExpediceMenuItem_click" x:Name="expediceMenuItem" Header="Expedice">
+            </MenuItem>
+            <MenuItem Click="ArchiveMenuItem_click" x:Name="archiveMenuItem" Header="Archiv">
+            </MenuItem>
+            <MenuItem Click="HistoryMenuItem_click" x:Name="historieMenuItem" Header="Historie">
+            </MenuItem>
+        </Menu>
+        <ContentControl x:Name="contentCtrl" HorizontalContentAlignment="Stretch" Margin="0,18,0,0" VerticalContentAlignment="Stretch"/>
+        
+    </Grid>
+</Window>

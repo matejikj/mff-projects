@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HarmonogramDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Car">
+    <Key>
+      <PropertyRef Name="CarId" />
+    </Key>
+    <Property Name="CarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Expedition">
+    <Key>
+      <PropertyRef Name="ExpeditionId" />
+    </Key>
+    <Property Name="ExpeditionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ExpedicePoradi" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpediceAuto" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpediceDatum" Type="date" />
+    <Property Name="DoplnMat" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpeditedSortNr" Type="int" />
+    <Property Name="KridlaKsZbyvaExpedovat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKsZbyvaExpedovat" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExepdiceColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="AutoColor" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="MaterialId" />
+    </Key>
+    <Property Name="MaterialId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="SortNr" Type="int" />
+    <Property Name="NotBlank" Type="bit" Nullable="false" />
+    <Property Name="IsInProccess" Type="bit" Nullable="false" />
+    <Property Name="Department" Type="int" />
+    <Property Name="ArchivedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="ArchivedDate" Type="datetime" />
+    <Property Name="IsArchived" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="Color" Type="nchar" MaxLength="10" />
+    <Property Name="PripravaC" Type="nchar" MaxLength="10" />
+    <Property Name="Priprava" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OblozkyC" Type="nchar" MaxLength="10" />
+    <Property Name="Oblozky" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StredoveC" Type="nchar" MaxLength="10" />
+    <Property Name="Stredove" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RamecekC" Type="nchar" MaxLength="10" />
+    <Property Name="Ramecek" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KlapackaC" Type="nchar" MaxLength="10" />
+    <Property Name="Klapacka" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PosuvC" Type="nchar" MaxLength="10" />
+    <Property Name="Posuv" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DvereC" Type="nchar" MaxLength="10" />
+    <Property Name="Dvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DokonceniC" Type="nchar" MaxLength="10" />
+    <Property Name="Dokonceni" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KompletaceC" Type="nchar" MaxLength="10" />
+    <Property Name="Kompletace" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkladC" Type="nchar" MaxLength="10" />
+    <Property Name="Sklad" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ZahajeniDatum" Type="date" />
+    <Property Name="Technik" Type="nvarchar" MaxLength="20" />
+    <Property Name="Zakazka" Type="nvarchar" MaxLength="150" />
+    <Property Name="Material" Type="nvarchar" MaxLength="150" />
+    <Property Name="ZakazkaColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaterialColor" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZakazkaNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="VyrobniNr" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaText" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="KridlaKs" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneText" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKsExpedovanych" Type="nvarchar" MaxLength="50" />
+    <Property Name="ZarubneKs" Type="nvarchar" MaxLength="50" />
+    <Property Name="TypZarubne" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dokumentace" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DokumentaceC" Type="nchar" MaxLength="10" />
+    <Property Name="InDoca" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="InDocaC" Type="nchar" MaxLength="10" />
+    <Property Name="DocUrl" Type="nvarchar" MaxLength="250" />
+    <Property Name="ObalovatOblozkyC" Type="nchar" MaxLength="10" />
+    <Property Name="ObalovatOblozky" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RezatOblozkyC" Type="nchar" MaxLength="10" />
+    <Property Name="RezatOblozky" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CncOblozkyC" Type="nchar" MaxLength="10" />
+    <Property Name="CncOblozky" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CentrumStredoveC" Type="nchar" MaxLength="10" />
+    <Property Name="CentrumStredove" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LisStredoveC" Type="nchar" MaxLength="10" />
+    <Property Name="LisStredove" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OlepovaniStredoveC" Type="nchar" MaxLength="10" />
+    <Property Name="OlepovaniStredove" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FrezovaniStredoveC" Type="nchar" MaxLength="10" />
+    <Property Name="FrezovaniStredove" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="TypRamecekC" Type="nchar" MaxLength="10" />
+    <Property Name="TypRamecek" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ObalovaniRamecekC" Type="nchar" MaxLength="10" />
+    <Property Name="ObalovaniRamecek" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RezaniRamecekC" Type="nchar" MaxLength="10" />
+    <Property Name="RezaniRamecek" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ObalovaniKlapackaC" Type="nchar" MaxLength="10" />
+    <Property Name="ObalovaniKlapacka" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RezaniKlapackaC" Type="nchar" MaxLength="10" />
+    <Property Name="RezaniKlapacka" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="HranolPosuvC" Type="nchar" MaxLength="10" />
+    <Property Name="HranolPosuv" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="GarnyzPosuvC" Type="nchar" MaxLength="10" />
+    <Property Name="GarnyzPosuv" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DorazovaPosuvC" Type="nchar" MaxLength="10" />
+    <Property Name="DorazovaPosuv" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CentrumDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="CentrumDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KorpusyDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="KorpusyDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SesazenkyDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="SesazenkyDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LisDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="LisDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FormatkaDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="FormatkaDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OlepovackaDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="OlepovackaDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CncDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="CncDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PgmDvereC" Type="nchar" MaxLength="10" />
+    <Property Name="PgmDvere" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BrouseniDyhaDokonceniC" Type="nchar" MaxLength="10" />
+    <Property Name="BrouseniDyhaDokonceni" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ZakladDokonceniC" Type="nchar" MaxLength="10" />
+    <Property Name="ZakladDokonceni" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BrouseniZakladDokonceniC" Type="nchar" MaxLength="10" />
+    <Property Name="BrouseniZakladDokonceni" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="VrchDokonceniC" Type="nchar" MaxLength="10" />
+    <Property Name="VrchDokonceni" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="DvereKompletaceC" Type="nchar" MaxLength="10" />
+    <Property Name="DvereKompletace" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ZarubenKompletaceC" Type="nchar" MaxLength="10" />
+    <Property Name="ZarubenKompletace" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KovaniSkladC" Type="nchar" MaxLength="10" />
+    <Property Name="KovaniSklad" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkloSkladC" Type="nchar" MaxLength="10" />
+    <Property Name="SkloSklad" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PripravaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PripravaZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="DokumentPripravaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="DokumentPripravaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="InDocaPripravaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="InDocaPripravaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LaserZarC" Type="nchar" MaxLength="10" />
+    <Property Name="LaserZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PohLaserZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PohLaserZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NepohLaserZarC" Type="nchar" MaxLength="10" />
+    <Property Name="NepohLaserZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PoutecLaserZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PoutecLaserZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NuzkyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="NuzkyZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoNuzkyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoNuzkyZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OhybackaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="OhybackaZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PohOhybackaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PohOhybackaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NepohOhybackaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="NepohOhybackaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PoutecOhybackaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PoutecOhybackaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PilaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PilaZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PohPilaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PohPilaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NepohPilaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="NepohPilaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="VyrazeckaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="VyrazeckaZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoVyrazeckaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoVyrazeckaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BodovaniZarC" Type="nchar" MaxLength="10" />
+    <Property Name="BodovaniZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoBodovaniZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoBodovaniZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SvarovaniZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SvarovaniZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoSvarovaniZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoSvarovaniZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BrouseniZarC" Type="nchar" MaxLength="10" />
+    <Property Name="BrouseniZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoBrouseniZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoBrouseniZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StrikarnaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="StrikarnaZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoStrikarnaZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoStrikarnaZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RameckyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="RameckyZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="NarezRameckyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="NarezRameckyZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FrezRameckyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="FrezRameckyZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SvarRameckyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SvarRameckyZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StriRameckyZarC" Type="nchar" MaxLength="10" />
+    <Property Name="StriRameckyZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KompletaceZarC" Type="nchar" MaxLength="10" />
+    <Property Name="KompletaceZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoKompletaceZarC" Type="nvarchar" MaxLength="32" />
+    <Property Name="SplnenoKompletaceZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkladZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SkladZar" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PlechSkladZarC" Type="nchar" MaxLength="10" />
+    <Property Name="PlechSkladZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BarvaSkladZarC" Type="nchar" MaxLength="10" />
+    <Property Name="BarvaSkladZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KovaniSkladZarC" Type="nchar" MaxLength="10" />
+    <Property Name="KovaniSkladZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkloSkladZarC" Type="nchar" MaxLength="10" />
+    <Property Name="SkloSkladZar" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PripravaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="PripravaKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="DokumentPripravaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="DokumentPripravaKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="IndocaPripravaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="IndocaPripravaKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LaserKridC" Type="nchar" MaxLength="10" />
+    <Property Name="LaserKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PohLaserKridC" Type="nchar" MaxLength="10" />
+    <Property Name="PohLaserKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NepohLaserKridC" Type="nchar" MaxLength="10" />
+    <Property Name="NepohLaserKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KlapackaLaserKridC" Type="nchar" MaxLength="10" />
+    <Property Name="KlapackaLaserKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OkopLaserKridC" Type="nchar" MaxLength="10" />
+    <Property Name="OkopLaserKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="OhybackaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="OhybackaKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PohOhybackaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="PohOhybackaKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NepohOhybackaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="NepohOhybackaKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KlapackaOhybackaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="KlapackaOhybackaKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BodovaniKridC" Type="nchar" MaxLength="10" />
+    <Property Name="BodovaniKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoBodovaniKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoBodovaniKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ThermacolKridC" Type="nchar" MaxLength="10" />
+    <Property Name="ThermacolKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="NarezThermacolKridC" Type="nchar" MaxLength="10" />
+    <Property Name="NarezThermacolKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LepeniThermacolKridC" Type="nchar" MaxLength="10" />
+    <Property Name="LepeniThermacolKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CncThermacolKridC" Type="nchar" MaxLength="10" />
+    <Property Name="CncThermacolKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="LepeniKridC" Type="nchar" MaxLength="10" />
+    <Property Name="LepeniKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoLepeniKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoLepeniKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StrikarnaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="StrikarnaKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoStrikarnaKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoStrikarnaKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RameckyKridC" Type="nchar" MaxLength="10" />
+    <Property Name="RameckyKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="NarezRameckyKridC" Type="nchar" MaxLength="10" />
+    <Property Name="NarezRameckyKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FrezRameckyKridC" Type="nchar" MaxLength="10" />
+    <Property Name="FrezRameckyKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SvarRameckyKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SvarRameckyKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StriRameckyKridC" Type="nchar" MaxLength="10" />
+    <Property Name="StriRameckyKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KompletaceKridC" Type="nchar" MaxLength="10" />
+    <Property Name="KompletaceKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoKompletaceKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoKompletaceKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkladKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SkladKrid" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="PlechSkladKridC" Type="nchar" MaxLength="10" />
+    <Property Name="PlechSkladKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KovaniSkladKridC" Type="nchar" MaxLength="10" />
+    <Property Name="KovaniSkladKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BarvaSkladKridC" Type="nchar" MaxLength="10" />
+    <Property Name="BarvaSkladKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkloSkladKridC" Type="nchar" MaxLength="10" />
+    <Property Name="SkloSkladKrid" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PripravaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="PripravaHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="DokumentPripravaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="DokumentPripravaHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="IndocaPripravaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="IndocaPripravaHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NarezHliC" Type="nchar" MaxLength="10" />
+    <Property Name="NarezHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="ProfilNarezHliC" Type="nchar" MaxLength="10" />
+    <Property Name="ProfilNarezHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="ListyNarezHliC" Type="nchar" MaxLength="10" />
+    <Property Name="ListyNarezHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CncHliC" Type="nchar" MaxLength="10" />
+    <Property Name="CncHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoCncHliC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoCncHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="FrezaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="FrezaHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoFrezaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoFrezaHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Priprava2HliC" Type="nchar" MaxLength="10" />
+    <Property Name="Priprava2Hli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoPriprava2HliC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoPriprava2Hli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StrikarnaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="StrikarnaHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoStrikarnaHliC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoStrikarnaHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KompletaceHliC" Type="nchar" MaxLength="10" />
+    <Property Name="KompletaceHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="SplnenoKompletaceHliC" Type="nchar" MaxLength="10" />
+    <Property Name="SplnenoKompletaceHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkladHliC" Type="nchar" MaxLength="10" />
+    <Property Name="SkladHli" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="ProfilSkladHliC" Type="nchar" MaxLength="10" />
+    <Property Name="ProfilSkladHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="BarvaSkladHliC" Type="nchar" MaxLength="10" />
+    <Property Name="BarvaSkladHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="KovaniSkladHliC" Type="nchar" MaxLength="10" />
+    <Property Name="KovaniSkladHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SkloSkladHliC" Type="nchar" MaxLength="10" />
+    <Property Name="SkloSkladHli" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PozadovanyColor" Type="nchar" MaxLength="10" />
+    <Property Name="PozadovanyDatum" Type="date" />
+    <Property Name="DokonceniColor" Type="nchar" MaxLength="10" />
+    <Property Name="DokonceniDatum" Type="date" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ulice" Type="nvarchar" MaxLength="50" />
+    <Property Name="Cislo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mesto" Type="nvarchar" MaxLength="50" />
+    <Property Name="PSC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlosnyMaterial" Type="nvarchar" MaxLength="50" />
+    <Property Name="Poznamky" Type="nvarchar" MaxLength="150" />
+    <Property Name="HotovoBloky" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" />
+    <Property Name="Username" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" />
+    <Property Name="PresunDoArchivu" Type="bit" />
+    <Property Name="PresunDoExpedice" Type="bit" />
+    <Property Name="PresunDoVyroby" Type="bit" />
+    <Property Name="PrepisCisloZakazky" Type="bit" />
+    <Property Name="Expedice" Type="bit" />
+    <Property Name="Archiv" Type="bit" />
+    <Property Name="PristupDrevo" Type="bit" />
+    <Property Name="PristupOcel" Type="bit" />
+    <Property Name="PristupHlinik" Type="bit" />
+    <Property Name="Obchod" Type="bit" />
+    <Property Name="Priprava" Type="bit" />
+    <Property Name="Oblozky" Type="bit" />
+    <Property Name="Stredove" Type="bit" />
+    <Property Name="Ramecek" Type="bit" />
+    <Property Name="Klapacka" Type="bit" />
+    <Property Name="Posuv" Type="bit" />
+    <Property Name="Dvere" Type="bit" />
+    <Property Name="Dokonceni" Type="bit" />
+    <Property Name="Kompletace" Type="bit" />
+    <Property Name="Sklad" Type="bit" />
+    <Property Name="PripravarVyroby" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Expedition_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Expedition" Type="Self.Expedition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="Expedition">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HarmonogramDBModelStoreContainer">
+    <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expedition" EntityType="Self.Expedition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Expedition_Order" Association="Self.FK_Expedition_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Expedition" EntitySet="Expedition" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

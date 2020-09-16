@@ -1,0 +1,49 @@
+﻿<Window x:Class="Harmonogram.Windows.EditOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harmonogram.Windows"
+        mc:Ignorable="d"
+        Title="EditOrderWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Button Content="Ulozit" Click="Button_Click" HorizontalAlignment="Left" Margin="600,361,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Datum zahájení" Margin="52,52,634.6,334"/>
+
+        <DatePicker IsEnabled="False" x:Name="dp_zahajeniDatum" HorizontalAlignment="Left" Height="26" Margin="164,50,0,0" VerticalAlignment="Top" Width="127"/>
+        <Label Content="Technik:" Margin="90,82,634.6,305"/>
+        <TextBox x:Name="tb_technik" IsReadOnly="True" HorizontalAlignment="Left" Margin="164,87,0,0" VerticalAlignment="Top" Width="127" Height="20"/>
+        <Label Content="Zakázka:" Margin="90,115,634.6,272"/>
+        <TextBox x:Name="tb_zakazka" HorizontalAlignment="Left" Margin="164,117,0,0" VerticalAlignment="Top" Width="127" Height="20"/>
+        <Label Content="Materiál:" Margin="90,148,634.6,238" RenderTransformOrigin="0.027,0.687"/>
+        <TextBox x:Name="tb_material" HorizontalAlignment="Left" Margin="164,149,0,0" VerticalAlignment="Top" Width="105" Height="20"/>
+
+        <Label Content="Číslo zakázky:" Margin="63,175,634.6,211" RenderTransformOrigin="0.106,0.473"/>
+        <TextBox x:Name="tb_zakazkaNr" HorizontalAlignment="Left" Margin="164,179,0,0" VerticalAlignment="Top" Width="127" Height="20"/>
+        <Label Content="Křídel ks:" Margin="90,208,634.6,178"/>
+        <TextBox x:Name="tb_kridelks" HorizontalAlignment="Left" Margin="164,208,0,0" VerticalAlignment="Top" Width="127" Height="19"/>
+        <Label Content="Zárubně ks:" Margin="75,234,634.6,153"/>
+        <TextBox x:Name="tb_zarubniks" HorizontalAlignment="Left" Margin="164,236,0,0" VerticalAlignment="Top" Width="127" Height="20"/>
+        <Label Content="Ulice:" Margin="400,52,349,325"/>
+        <TextBox x:Name="tb_ulice" HorizontalAlignment="Left" Margin="448,50,0,0" VerticalAlignment="Top" Width="212" Height="21"/>
+        <Label Content="Poznámky:" Margin="369,176,344,210" RenderTransformOrigin="0.297,0.393"/>
+        <TextBox x:Name="tb_poznamky" HorizontalAlignment="Left" Margin="448,179,0,0" VerticalAlignment="Top" Width="212" Height="20"/>
+        <Label Content="Dokončení" Margin="364,209,349,178" RenderTransformOrigin="0.268,0.5"/>
+        <DatePicker x:Name="dp_Dokonceni" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="448,209,0,0" VerticalAlignment="Top" Width="127"/>
+        <TextBlock TextWrapping="Wrap" x:Name="lbl_rozdil" Margin="580,208,22,159"/>
+
+        <Label Content="Požadovaný datum:" Margin="319,238,355,149" RenderTransformOrigin="0.268,0.5"/>
+        <DatePicker x:Name="dp_pozadovany" SelectedDateChanged="dp_SelectedDateChanged" HorizontalAlignment="Left" Height="25" Margin="448,236,0,0" VerticalAlignment="Top" Width="127"/>
+
+        <TextBlock TextWrapping="Wrap" x:Name="tbl_varovani" Margin="52,352,218.6,32"/>
+        <ComboBox SelectionChanged="cb_SelectionChanged" x:Name="cb_materials" HorizontalAlignment="Left" Margin="274,149,0,0" VerticalAlignment="Top" Width="17" Height="20"/>
+        <Label Content="Cislo:" Margin="400,82,344,291"/>
+        <TextBox x:Name="tb_cislo" HorizontalAlignment="Left" Margin="448,87,0,0" VerticalAlignment="Top" Width="212" Height="20"/>
+        <Label Content="Mesto:" Margin="393,115,349,264"/>
+        <TextBox x:Name="tb_mesto" HorizontalAlignment="Left" Margin="448,117,0,0" VerticalAlignment="Top" Width="212" Height="20"/>
+        <Label Content="PSC:" Margin="406,148,349,238"/>
+        <TextBox x:Name="tb_PSC" HorizontalAlignment="Left" Margin="448,148,0,0" VerticalAlignment="Top" Width="212" Height="21"/>
+        <Label x:Name="lbl_varovani" Content="Vlozeno pismeno do kridel nebo zarubni!" Background="Red" Visibility="Collapsed" Margin="75,288,495,98"/>
+    </Grid>
+</Window>

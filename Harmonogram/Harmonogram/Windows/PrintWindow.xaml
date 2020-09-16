@@ -1,0 +1,30 @@
+﻿<Window x:Class="Harmonogram.Windows.PrintWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harmonogram.Windows"
+        mc:Ignorable="d"
+        Title="PrintWindow"
+        Height="450"
+        Width="800"
+        WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="32" Height="32"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" MaxHeight="24px" HorizontalAlignment="Left">
+            <Button x:Name="BtnPrint" Content="Print" Click="BtnPrint_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DocumentViewer  Grid.Column="1" x:Name="PreviewD" ShowPageBorders="True">
+                
+            </DocumentViewer>
+        </Grid>
+    </Grid>
+</Window>

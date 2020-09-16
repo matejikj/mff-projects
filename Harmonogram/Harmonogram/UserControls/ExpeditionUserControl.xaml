@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="Harmonogram.UserControls.ExpeditionUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Harmonogram.UserControls"
+             xmlns:local1="clr-namespace:Harmonogram.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             >
+    <Control.Resources>
+        <local1:DepartmentNameConverter x:Key="nameConverter"></local1:DepartmentNameConverter>
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="24px" Height="24px"/>
+            <RowDefinition MaxHeight="24px" Height="2*"/>
+            <RowDefinition Height="16*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="White" MaxHeight="24px">
+            <Label>Expedice</Label>
+        </Grid>
+
+        <Grid Grid.Row="1" MaxHeight="24px" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Name="btnUp" Click="btnUp_Click" Margin="4,1,4,1" Padding="2" >Nahoru</Button>
+            <Button Grid.Column="1" Name="btnDown" Click="btnDown_Click" Padding="2" Margin="4,1,4,1" >Dolů</Button>
+            <Button Grid.Column="2" Name="btnDelete" Click="btnDelete_Click" Padding="2" Margin="4,1,4,1" >Odstranit</Button>
+            <Button Grid.Column="3" Name="btnRefresh" Click="btnRefresh_Click" Padding="2" Margin="0,1,4,1" >Obnovit</Button>
+            <TextBlock x:Name="VyberVarovani" Visibility="Collapsed" Background="OrangeRed" Grid.Column="4" Margin="147.8,-1,-290.2,5">Nelze provést akci, není vybrán žádný řádek</TextBlock>
+            <TextBlock x:Name="CisloVarovani" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Margin="407.8,-1,-431.2,5" Background="OrangeRed" Grid.Column="4" Height="20" Width="113">Nebylo vloženo číslo</TextBlock>
+            <TextBlock x:Name="Ulozeno" Visibility="Collapsed" Margin="534.8,1,-544.2,5" Background="LimeGreen" Grid.Column="4">Nový text uložen</TextBlock>
+            <TextBlock x:Name="Validita" Visibility="Collapsed" Margin="289.8,5,-404.8,4" Background="Red" Grid.Column="8">Nevalidní hodnota expedice</TextBlock>
+
+        </Grid>
+        <Grid Grid.Row="2">
+            <DataGrid VirtualizingPanel.IsVirtualizing="True"
+                      VirtualizingPanel.IsContainerVirtualizable="True" VirtualizingPanel.VirtualizationMode="Recycling"
+                      EnableRowVirtualization="True" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                      x:Name="ExpeditionDataGrid"  AutoGenerateColumns="False" SelectedItem="{Binding Current_expedition}" CanUserAddRows="False">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="Height" Value="64"></Setter>
+                        <Setter Property="SeparatorVisibility" Value="Visible"></Setter>
+                        <Setter Property="SeparatorBrush" Value="Black"></Setter>
+                    </Style>
+                    <Style x:Key="MyTextStyle" TargetType="{x:Type TextBlock}">
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style x:Key="MyTextLeftAlignStyle" TargetType="{x:Type TextBlock}">
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                    </Style>
+                    <Style x:Key="MyHeaderMainCheckBoxStyle" TargetType="{x:Type DataGridColumnHeader}">
+                        <EventSetter Event="Click" Handler="CheckBoxHeader_Click"/>
+                        <Setter Property="Background" Value="#FFEE8A38"></Setter>
+                        <Setter Property="Width" Value="40"></Setter>
+                        <Setter Property="Height" Value="32"></Setter>
+                        <Setter Property="MaxHeight" Value="32"></Setter>
+                    </Style>
+                    <Style x:Key="MyHeaderOtherCheckBoxStyle" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="White"></Setter>
+                        <Setter Property="Width" Value="64"></Setter>
+                        <Setter Property="Height" Value="32"></Setter>
+                        <Setter Property="MaxHeight" Value="32"></Setter>
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <RotateTransform Angle="270"></RotateTransform>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                    <Style x:Key="MyCheckBoxStyle" TargetType="{x:Type CheckBox}">
+                        <Setter Property="Width" Value="16px"></Setter>
+                        <Setter Property="Height" Value="16px"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="LayoutTransform">
+                            <Setter.Value>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.8" ScaleY="1.8"></ScaleTransform>
+                                </TransformGroup>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="YellowGreen"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter Property="Background" Value="Yellow"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" IsReadOnly="True" Header="Oddělení" Binding="{Binding Order.Department}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" IsReadOnly="True" Header="Technik" Binding="{Binding Order.Technik}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" IsReadOnly="True" Header="Zakazka" Binding="{Binding Order.Zakazka}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" IsReadOnly="True" Header="Č. zakázky" Binding="{Binding Order.ZakazkaNr}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" IsReadOnly="True" Header="Křídel celkem" Binding="{Binding KridlaKsZbyvaExpedovat}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="Exp. křídel" Binding="{Binding KridlaKsExpedovanych}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" IsReadOnly="True" Header="Zárubní celkem" Binding="{Binding ZarubneKsZbyvaExpedovat}"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="Exp. zárubní" Binding="{Binding ZarubneKsExpedovanych}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Datum expedice" MinWidth="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDateChanged="dp_SelectedDateChanged" SelectedDate="{Binding ExpediceDatum}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource MyHeaderMainCheckBoxStyle}" Header="Mesto" x:Name="Mesto" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock VerticalAlignment="Center" Name="Mesto" Text="{Binding Order.Mesto}">
+                                    <TextBlock.ToolTip>
+                                        <TextBlock Text="{Binding Order.Adresa}"></TextBlock>
+                                    </TextBlock.ToolTip>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn x:Name="Ulice" IsReadOnly="True" ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="Ulice" Binding="{Binding Order.Ulice}"></DataGridTextColumn>
+                    <DataGridTextColumn x:Name="Cislo" IsReadOnly="True" ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="Cislo" Binding="{Binding Order.Cislo}"></DataGridTextColumn>
+                    <DataGridTextColumn x:Name="PSC" IsReadOnly="True" ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="PSC" Binding="{Binding Order.PSC}"></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="18" MouseUp="HandleAddressLinkClick" Width="20" Source="..\Resources\map.ico"></Image>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    <DataGridTemplateColumn Header="Typ auta">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox LostFocus="TypAuta_LostFocus" MouseDoubleClick="TypAutaColorBtn_changed" Text="{Binding ExpediceAuto}" Background="{Binding AutoColor}" ></TextBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Pořadí">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox LostFocus="Material_LostFocus" MouseDoubleClick="expeditionColorBtn_changed" Text="{Binding ExpedicePoradi}" Background="{Binding ExepdiceColor}" ></TextBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource MyTextStyle}" Width="80" Header="DplnMat" Binding="{Binding DoplnMat}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

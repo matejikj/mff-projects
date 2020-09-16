@@ -1,0 +1,24 @@
+﻿<Window x:Class="Harmonogram.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harmonogram.Windows"
+        mc:Ignorable="d"
+        Title="Harmonogram" Height="291.258" Width="380.368">
+    <Grid>
+        <TextBox x:Name="tb_Username" HorizontalAlignment="Left" Height="23" Margin="140,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="pb_Password" KeyDown="pb_Password_KeyDown" HorizontalAlignment="Left" Height="23" Margin="140,156,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Uživatelské jméno:" HorizontalAlignment="Left" Margin="27,129,0,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Heslo:" HorizontalAlignment="Left" Margin="93,156,0,0" VerticalAlignment="Top" Height="23"/>
+        <Button Content="Přihlásit" Click="btnLogin_Click" HorizontalAlignment="Left" Margin="140,184,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBlock  x:Name="tb_result" HorizontalAlignment="Left" Margin="140,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Label Content="Server:" HorizontalAlignment="Left" Margin="89,44,0,0" VerticalAlignment="Top" Height="23"/>
+        <TextBox x:Name="tb_server" HorizontalAlignment="Left" Height="23" Margin="140,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox SelectionChanged="cb_ServersSelectionChanged" x:Name="cb_servers" HorizontalAlignment="Left" Margin="265,44,0,0" VerticalAlignment="Top" Width="21" Height="23"/>
+        <ComboBox SelectionChanged="cb_UsersSelectionChanged" x:Name="cb_users" HorizontalAlignment="Left" Margin="265,129,0,0" VerticalAlignment="Top" Width="21" Height="22"/>
+
+
+
+    </Grid>
+</Window>
